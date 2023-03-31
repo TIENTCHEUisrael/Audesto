@@ -1,0 +1,1 @@
+@extends('bienvenue.fr.welcome')
