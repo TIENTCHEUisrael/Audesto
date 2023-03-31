@@ -1,0 +1,50 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.content .top{
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 8px;
+}
+
+.content .top h1{
+    font-weight: bold;
+    font-size: 70px;
+}
+
+.content .top h3{
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 60px;
+}
+
+.content .top p{
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 13px;
+    margin-bottom: 3%;
+}
+
+.content .top .selection{
+    background-color: whitesmoke;
+    width: 100%;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.content .top .selection .card{
+    padding: 10px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;    
+}
+
+.content .top .selection .card .icon{
+    
+}
