@@ -1,1 +1,1 @@
-@extends('bienvenue.fr.welcome')
+@extends('layouts.app-master')

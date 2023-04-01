@@ -13,6 +13,5 @@ class HomeController extends Controller
     {        $modeles = DB::select('select * from modele');
         return view('home.welcome',['models'=>$modeles]);
 
-        //return view('home.welcome');
     }
 }
