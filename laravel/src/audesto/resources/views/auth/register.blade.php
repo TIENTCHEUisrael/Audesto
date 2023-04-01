@@ -11,7 +11,9 @@
     <script src="{!! url('assets/js/login.js') !!}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css.css">
 </head>
+<?php
 
+?>
 <body class="text-center">
     <header>
     </header>
@@ -27,15 +29,15 @@
                     <div class="formbox">
                         <div class="form">
                             <h2>Signin</h2>
-                            <input type="text" name="usernamelog" value="{{ old('username') }}" placeholder="Username" required="required" autofocus>
+                            <input type="text" name="username" value="{{ old('username') }}" placeholder="Username" required="required" autofocus>
                             @if ($errors->has('username'))
                             <span class="text-danger text-left">{{ $errors->first('username') }}</span>
                             @endif
-                            <input type="password" name="passwordlog" value="{{ old('password') }}" placeholder="Password" required="required">
+                            <input type="password" name="password" value="{{ old('password') }}" placeholder="Password" required="required">
                             @if ($errors->has('password'))
                             <span class="text-danger text-left">{{ $errors->first('password') }}</span>
                             @endif
-                            <input type="submit" value="Login">
+                            <input type="submit"  value="Login">
                             <p class="signup-text">Don't have an account? <a href="#" onClick="toggleform();">Signup</a></p>
                         </div>
                     </div>
@@ -47,17 +49,17 @@
                     <div class="formbox">
                         <div class="form">
                             <h2>Signup</h2>
-                            <input type="text" placeholder="Name">
-                            @if ($errors->has('username'))
-                            <span class="text-danger text-left">{{ $errors->first('username') }}</span>
+                            <input type="text" placeholder="username" name="usernamereg">
+                            @if ($errors->has('usernamereg'))
+                            <span class="text-danger text-left">{{ $errors->first('usernamereg') }}</span>
                             @endif
                             <input type="email" name="email" value="{{ old('email') }}" placeholder="name@example.com" required="required" autofocus>
                             @if ($errors->has('email'))
                             <span class="text-danger text-left">{{ $errors->first('email') }}</span>
                             @endif
-                            <input type="password" name="password" value="{{ old('password') }}" placeholder="Password" required="required">
-                            @if ($errors->has('password'))
-                            <span class="text-danger text-left">{{ $errors->first('password') }}</span>
+                            <input type="password" name="passwordreg" value="{{ old('passwordreg') }}" placeholder="Password" required="required">
+                            @if ($errors->has('passwordreg'))
+                            <span class="text-danger text-left">{{ $errors->first('passwordreg') }}</span>
                             @endif
                             <input type="password" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Confirm Password" required="required">
                             @if ($errors->has('password_confirmation'))

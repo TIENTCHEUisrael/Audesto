@@ -41,4 +41,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          */
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
     });
+    /**
+     * Customer routes
+     */
+    Route::get('Client/dashboard', 'ClientController@dashboard')->name('client.dashboard');
+    /*Route::prefix('Client')->group(function(){
+        Route::get('/register', [ClientController::class, 'register'])->name('register');
+        Route::post('/register', [ClientController::class, 'store'])->name('client.store');
+        Route::post('/connexion', [ClientController::class, 'connected'])->name('HasConnected');
+        Route::post('/preoccupation', [ClientController::class, 'probleme'])->name('preoccupation');
+    });*/
 });
