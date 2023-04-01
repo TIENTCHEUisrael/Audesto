@@ -45,6 +45,19 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      * Customer routes
      */
     Route::get('Client/dashboard', 'ClientController@dashboard')->name('client.dashboard');
+
+    Route::get('Client/reservation', 'ClientController@reservation')->name('client.reservation');
+    Route::post('Client/reservation', 'ClientController@savereservation')->name('client.savereservation');
+
+    Route::get('Client/profile', 'ClientController@profile')->name('client.profile');
+    Route::post('Client/profile', 'ClientController@saveprofile')->name('client.profile');
+
+    Route::get('Client/faq', 'ClientController@faq')->name('client.faq');
+    Route::get('Client/garage', 'ClientController@garage')->name('client.garage');
+
+    Route::get('Client/contact', 'ClientController@contact')->name('client.contact');
+    Route::post('Client/contact', 'ClientController@savecontact')->name('client.savecontact');
+
     /*Route::prefix('Client')->group(function(){
         Route::get('/register', [ClientController::class, 'register'])->name('register');
         Route::post('/register', [ClientController::class, 'store'])->name('client.store');
