@@ -12,6 +12,7 @@
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/orther/userPage.css">
+    <script src="../js/orther/userPage.js"></script>
 
 </head>
 
@@ -57,9 +58,16 @@
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="../screens/userPage.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-user"></i>
                     <span>User</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="./screens/userPage.html">
+                    <i class="fas fa-fw fa-mail-bulk"></i>
+                    <span>Messages</span></a>
             </li>
 
             <!-- Divider -->
@@ -106,7 +114,7 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="../screens/userPage.html">
+                <a class="nav-link" href="../screens/profile.html">
                     <i class="fas fa-fw fa-user-circle"></i>
                     <span>Profile</span></a>
             </li>
@@ -196,55 +204,39 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <div class="container1">
-                        <h2>Profil d'administrateur</h2>
-                        <div class="row">
-                            <div class="col-25">
-                                <img class="profile-pic" src="https://www.w3schools.com/w3images/avatar2.png" alt="Photo de profil">
-                            </div>
-                            <div class="col-75">
-                                <h3>Jean Dupont</h3>
-                                <p>jdupont@admin.com</p>
-                                <div class="btns">
-                                    <button class="logout-btn">Se déconnecter</button>
-                                <button class="logout-btn2">Update</button>
-                                </div>
-                            </div>
+                <div class="container-fluid my-5">
+
+                    
+                    <h1 class="text-center my-5">Ajout de client</h1>
+                    <form id="formClient" class="mx-auto">
+                        <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="nom">Nom</label>
+                            <input type="text" class="form-control" id="nom" name="nom" required>
                         </div>
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="nom">Nom :</label>
-                            </div>
-                            <div class="col-75">
-                                <input type="text" id="nom" name="nom" value="Jean" disabled>
-                            </div>
+                        <div class="form-group col-md-6">
+                            <label for="prenom">Prénom</label>
+                            <input type="text" class="form-control" id="prenom" name="prenom" required>
                         </div>
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="prenom">Prénom :</label>
-                            </div>
-                            <div class="col-75">
-                                <input type="text" id="prenom" name="prenom" value="Dupont" disabled>
-                            </div>
                         </div>
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="email">Email :</label>
-                            </div>
-                            <div class="col-75">
-                                <input type="email" id="email" name="email" value="jdupont@admin.com" disabled>
-                            </div>
+                        <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
                         </div>
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="mdp">Mot de passe :</label>
-                            </div>
-                            <div class="col-75">
-                                <input type="password" id="mdp" name="mdp" value="********" disabled>
-                            </div>
+                        <div class="form-group col-md-6">
+                            <label for="telephone">Téléphone</label>
+                            <input type="text" class="form-control" id="telephone" name="telephone" required>
                         </div>
-                    </div>
+                        </div>
+                        <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="adresse">Adresse</label>
+                            <textarea class="form-control" id="adresse" name="adresse" rows="3" required></textarea>
+                        </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-5">Ajouter le client</button>
+                    </form>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -304,7 +296,8 @@
 
     <!-- Page level plugins -->
     <script src="../vendor/chart.js/Chart.min.js"></script>
-
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <script src="../vendor/jquery/jquery.slim.min.js"></script>
     <!-- Page level custom scripts -->
     <script src="../js/demo/chart-area-demo.js"></script>
     <script src="../js/demo/chart-bar-demo.js"></script>
