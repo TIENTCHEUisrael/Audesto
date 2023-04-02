@@ -9,10 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Audesto-admin</title>
-    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/orther/userPage.css">
-    <script src="../js/orther/userPage.js"></script>
+    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -25,7 +23,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../../index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -37,7 +35,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="../index.html">
+                <a class="nav-link" href="../../index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -52,24 +50,24 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="../screens/listes_client.html">
+                <a class="nav-link" href="../../screens/listes_client.html">
                     <i class="fas fa-fw fa-list"></i>
                     <span>Listes</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="../../screens/userPage.html">
                     <i class="fas fa-fw fa-user"></i>
                     <span>User</span></a>
             </li>
 
+
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="../screens/messages.html">
+                <a class="nav-link" href="./screens/userPage.html">
                     <i class="fas fa-fw fa-mail-bulk"></i>
                     <span>Messages</span></a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -88,9 +86,9 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Informations</h6>
-                        <a class="collapse-item" href="../404.html">Reservation completed</a>
-                        <a class="collapse-item" href="../404.html">Reservation Waiting</a>
-                        <a class="collapse-item" href="../404.html">Adding real estate</a>
+                        <a class="collapse-item" href=".../../404.html">Reservation completed</a>
+                        <a class="collapse-item" href=".../../404.html">Reservation Waiting</a>
+                        <a class="collapse-item" href="../../404.html">Adding real estate</a>
                     </div>
                 </div>
             </li>
@@ -105,25 +103,25 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Informations</h6>
-                        <a class="collapse-item" href="../screens/Car/reservationC.html">Reservation completed</a>
-                        <a class="collapse-item" href="../screens/Car/reservationW.html">Reservation waiting</a>
-                        <a class="collapse-item" href="../screens/Car/carAdd.html">Add car</a>
-                        <a class="collapse-item" href="../screens/Car/modelAdd.html">Add model</a>
-                        <a class="collapse-item" href="../screens/Car/listCar.html">list car</a>
+                        <a class="collapse-item" href="../../screens/Car/reservationC.html">Reservation completed</a>
+                        <a class="collapse-item" href="../../screens/Car/reservationW.html">Reservation waiting</a>
+                        <a class="collapse-item" href="../../screens/Car/carAdd.html">Add car</a>
+                        <a class="collapse-item" href="../../screens/Car/modelAdd.html">Add model</a>
+                        <a class="collapse-item" href="../../screens/Car/listCar.html">list car</a>
                     </div>
                 </div>
             </li>
             <hr class="sidebar-divider">
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="../screens/profile.html">
+                <a class="nav-link" href="../../screens/profile.html">
                     <i class="fas fa-fw fa-user-circle"></i>
                     <span>Profile</span></a>
             </li>
 
              <!-- Nav Item - Tables -->
              <li class="nav-item">
-                <a class="nav-link" href="../login.html">
+                <a class="nav-link" href="../../login.html">
                     <i class="fas fa-fw fa-arrow-left"></i>
                     <span>Deconnexion</span></a>
             </li>
@@ -179,7 +177,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
-                                    src="../img/undraw_profile.svg">
+                                    src="../../img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -206,39 +204,8 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid my-5">
-
-                    
-                    <h1 class="text-center my-5">Ajout de client</h1>
-                    <form id="formClient" class="mx-auto">
-                        <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="nom">Nom</label>
-                            <input type="text" class="form-control" id="nom" name="nom" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="prenom">Prénom</label>
-                            <input type="text" class="form-control" id="prenom" name="prenom" required>
-                        </div>
-                        </div>
-                        <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="telephone">Téléphone</label>
-                            <input type="text" class="form-control" id="telephone" name="telephone" required>
-                        </div>
-                        </div>
-                        <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="adresse">Adresse</label>
-                            <textarea class="form-control" id="adresse" name="adresse" rows="3" required></textarea>
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary mb-5">Ajouter le client</button>
-                    </form>
+                <div class="container-fluid">                    
+                    <h2>A faire ce soir</h2>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -280,30 +247,28 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="../login.html">Logout</a>
+                    <a class="btn btn-primary" href="../../login.html">Logout</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../js/sb-admin-2.min.js"></script>
+    <script src="../../js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../vendor/chart.js/Chart.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-    <script src="../vendor/jquery/jquery.slim.min.js"></script>
+    <script src="../../vendor/chart.js/Chart.min.js"></script>
+
     <!-- Page level custom scripts -->
-    <script src="../js/demo/chart-area-demo.js"></script>
-    <script src="../js/demo/chart-bar-demo.js"></script>
-    <script src="../js/demo/chart-pie-demo.js"></script>
+    <script src="../../js/demo/chart-area-demo.js"></script>
+    <script src="../../js/demo/chart-pie-demo.js"></script>
 
 </body>
 

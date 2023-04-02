@@ -61,7 +61,7 @@ h2 {
     padding: 12px 20px;
     margin-left: 150px;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px;
@@ -77,7 +77,7 @@ h2 {
     padding: 12px 20px;
     margin-left: 150px;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
     float: right;
