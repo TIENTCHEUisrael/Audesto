@@ -47,6 +47,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      */
     Route::get('Client/dashboard', 'ClientController@dashboard')->name('client.dashboard');
 
+    Route::post('Client/password', 'PasswordController@uppassword')->name('password.uppassword');
+
     Route::get('Client/reservation', 'ClientController@reservation')->name('client.reservation');
     Route::post('Client/reservation', 'ClientController@savereservation')->name('client.savereservation');
 

@@ -34,11 +34,12 @@
 
               <img src="{!! url('assets/clientassets/img/user.png') !!}" alt="Profile" class="rounded-circle">
               <h2>{{ auth()->user()->name }}</h2>
-              <?php if(auth()->user()->job != NULL)
-              {
-                    echo '<h3>'.auth()->user()->job.'</h3>';
-              }else { echo '<h3>Non défini</h3>';}
-              ?>   
+              <?php if (auth()->user()->job != NULL) {
+                echo '<h3>' . auth()->user()->job . '</h3>';
+              } else {
+                echo '<h3>Non défini</h3>';
+              }
+              ?>
               <!--<div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -142,7 +143,7 @@
                     <div class="row mb-3">
                       <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="company"  maxlength="40" type="text" class="form-control" id="company" value="{{ auth()->user()->company }} " required>
+                        <input name="company" maxlength="40" type="text" class="form-control" id="company" value="{{ auth()->user()->company }} " required>
                       </div>
                     </div>
 
@@ -175,36 +176,43 @@
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
-
+                  <form action="{{ route('password.uppassword') }}" method="post" class="php-email-form">
+                  @csrf
                     <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Mot de passe Actuel</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="password" type="password" class="form-control" id="currentPassword">
+                        <input name="password" type="password" class="form-control" id="currentPassword" required>
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label" >Nouveau Mot passe</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="newpassword" type="password" class="form-control" id="newPassword">
+                        <input name="newpassword" type="password" class="form-control" id="newPassword" minlength="8" required>
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
+                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Verifier le mot de passe</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                        <input name="renewpassword" type="password" class="form-control" id="renewPassword" minlength="8" required>
                       </div>
                     </div>
 
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Change Password</button>
+                    <div class="col-md-12 text-center">
+                      <div class="loading"></div>
+                      <div class="error-message"></div>
+                      <div class="sent-message"></div>
+
+                      <button type="submit" class="btn btn-primary">Mettre a Jour</button>
+                      <!-- Vertically centered Modal -->
+                      <!-- End Vertically centered Modal-->
+
                     </div>
                   </form><!-- End Change Password Form -->
 
                 </div>
-
+                
               </div><!-- End Bordered Tabs -->
 
             </div>
