@@ -33,36 +33,38 @@
 </head>
 
 <body class="u-body u-xl-mode" data-lang="en">
-  <header class="u-clearfix u-header u-header" id="sec-5a30">
+  <header class="u-clearfix u-header u-sticky u-sticky-8e23 u-white u-header" id="sec-f98f">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <a href="#" class="u-image u-logo u-image-1">
+      <a href="#" class="u-image u-logo u-image-1" data-image-width="1042" data-image-height="1042" title="logo">
         <img src="{!! url('images/default-logo.png') !!}" class="u-logo-image u-logo-image-1">
       </a>
-      <nav class="u-menu u-menu-hamburger u-offcanvas u-menu-1" data-responsive-from="XL">
-        <div class="menu-collapse" style="font-size: 1rem; font-weight: 700; letter-spacing: 0px;">
-          <a class="u-button-style u-custom-border u-custom-border-color u-custom-borders u-custom-left-right-menu-spacing u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link" href="#">
+      <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+          <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" data-lang-en="{&quot;content&quot;:&quot;<svg class=\&quot;u-svg-link\&quot; viewBox=\&quot;0 0 24 24\&quot;><use xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xlink:href=\&quot;#menu-hamburger\&quot;></use></svg><svg class=\&quot;u-svg-content\&quot; version=\&quot;1.1\&quot; id=\&quot;menu-hamburger\&quot; viewBox=\&quot;0 0 16 16\&quot; x=\&quot;0px\&quot; y=\&quot;0px\&quot; xmlns:xlink=\&quot;http://www.w3.org/1999/xlink\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;>    <g>        <rect y=\&quot;1\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;7\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>        <rect y=\&quot;13\&quot; width=\&quot;16\&quot; height=\&quot;2\&quot;></rect>    </g></svg>&quot;,&quot;href&quot;:&quot;#&quot;}">
             <svg class="u-svg-link" viewBox="0 0 24 24">
-              <use href="#menu-hamburger" />
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
             </svg>
-            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
               <g>
-                <rect y="1" width="16" height="2" />
-                <rect y="7" width="16" height="2" />
-                <rect y="13" width="16" height="2" />
+                <rect y="1" width="16" height="2"></rect>
+                <rect y="7" width="16" height="2"></rect>
+                <rect y="13" width="16" height="2"></rect>
               </g>
             </svg>
           </a>
         </div>
         <div class="u-custom-menu u-nav-container">
-          <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
-            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base" href="{{ route('home.welcome') }}" style="padding: 10px;">Home</a></li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base" href="#" style="padding: 10px;">A Propos de Nous</a></li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base" href="#" style="padding: 10px;">F.A.Q </a></li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-palette-2-base" href="{{ route('login.perform') }}" style="padding: 10px;">Se Connecter</a></li>
-              @auth
-              {{auth()->user()->name}}
-            <li class="nav__item"><a href="{{ route('logout.perform') }}">Logout</a></li>
-            @endauth
+          <ul class="u-nav u-unstyled u-nav-1">
+            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base active" href="{{ route('home.welcome')}}" style="padding: 10px 20px;" data-lang-en="{&quot;content&quot;:&quot;Accueil&quot;,&quot;href&quot;:&quot;Accueil.html&quot;}">Accueil</a>
+            </li>
+            <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{ route('register.show')}}" style="padding: 10px 20px;" data-lang-en="{&quot;content&quot;:&quot;Se Connecter&quot;,&quot;href&quot;:&quot;Se-Connecter.html&quot;}">Se Connecter</a>
+            </li>
+            @auth
+        {{auth()->user()->name}}
+          <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{{ route('logout.perform') }}" style="padding: 10px 20px;" data-lang-en="{&quot;content&quot;:&quot;Se Connecter&quot;,&quot;href&quot;:&quot;Se-Connecter.html&quot;}">Se Deconnecter</a>
+            </li>
+      @endauth
+
           </ul>
         </div>
         <div class="u-custom-menu u-nav-container-collapse">
@@ -70,13 +72,70 @@
             <div class="u-inner-container-layout u-sidenav-overflow">
               <div class="u-menu-close"></div>
               <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="https://website56263.nicepage.io/Home.html">Home</a>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link active" href="Accueil.html" data-lang-en="{&quot;content&quot;:&quot;Accueil&quot;,&quot;href&quot;:&quot;Accueil.html&quot;}">Accueil</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="À-propos-de.html" data-lang-en="{&quot;content&quot;:&quot;À propos de&quot;,&quot;href&quot;:&quot;À-propos-de.html&quot;}">À propos de</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Se-Connecter.html" data-lang-en="{&quot;content&quot;:&quot;Se Connecter&quot;,&quot;href&quot;:&quot;Se-Connecter.html&quot;}">Se Connecter</a>
                 </li>
               </ul>
             </div>
           </div>
           <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
         </div>
+        <style class="offcanvas-style">
+          .u-offcanvas .u-sidenav {
+            flex-basis: 250px !important;
+          }
+
+          .u-offcanvas:not(.u-menu-open-right) .u-sidenav {
+            margin-left: -250px;
+          }
+
+          .u-offcanvas.u-menu-open-right .u-sidenav {
+            margin-right: -250px;
+          }
+
+          @keyframes menu-shift-left {
+            from {
+              left: 0;
+            }
+
+            to {
+              left: 250px;
+            }
+          }
+
+          @keyframes menu-unshift-left {
+            from {
+              left: 250px;
+            }
+
+            to {
+              left: 0;
+            }
+          }
+
+          @keyframes menu-shift-right {
+            from {
+              right: 0;
+            }
+
+            to {
+              right: 250px;
+            }
+          }
+
+          @keyframes menu-unshift-right {
+            from {
+              right: 250px;
+            }
+
+            to {
+              right: 0;
+            }
+          }
+        </style>
       </nav>
     </div>
   </header>

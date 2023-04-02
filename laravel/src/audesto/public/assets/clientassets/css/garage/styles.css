@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    overflow: hidden;
+    margin: 0;
+    background: #262626;
+    height: 100vh; /* 100% пространства */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    padding: 0 20px;
+}
+
+.slide {
+    height: 80vh; /* 80% пространства видимого экрана */
+    border-radius: 20px; /* закругления */
+    margin: 10px;
+    cursor: pointer; /* При наведении показывает что можем взаимодействовать */
+    color: #fff;
+    flex: 1; /* Чтобы каждый элемент растягивался пропорционально */
+    /* Cтилизуем картинки в карточках */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 500ms ease-in-out;
+}
+
+.slide h3 {
+   position: absolute;
+   font-size: 24px;
+   bottom: 20px;
+   left: 20px;
+   margin: 0;
+   opacity: 0; /* В этом случае работаем с текстом на слайде при активации */
+}
+
+.slide.active { /* Если слайд активен */
+    flex: 10;
+}
+
+.slide.active h3 {
+    opacity: 1; /* В этом случае работаем с текстом на слайде при активации */
+    transition: opacity 0.3s ease-in 0.4s; /* Сначала пишем какое свойтсов анимируем,потом за сколько времени и какая функция */
+}

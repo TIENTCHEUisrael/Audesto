@@ -49,17 +49,17 @@
                     <div class="formbox">
                         <div class="form">
                             <h2>Signup</h2>
-                            <input type="text" placeholder="username" name="usernamereg">
-                            @if ($errors->has('usernamereg'))
-                            <span class="text-danger text-left">{{ $errors->first('usernamereg') }}</span>
+                            <input type="text" placeholder="username" name="username">
+                            @if ($errors->has('username'))
+                            <span class="text-danger text-left">{{ $errors->first('username') }}</span>
                             @endif
                             <input type="email" name="email" value="{{ old('email') }}" placeholder="name@example.com" required="required" autofocus>
                             @if ($errors->has('email'))
                             <span class="text-danger text-left">{{ $errors->first('email') }}</span>
                             @endif
-                            <input type="password" name="passwordreg" value="{{ old('passwordreg') }}" placeholder="Password" required="required">
-                            @if ($errors->has('passwordreg'))
-                            <span class="text-danger text-left">{{ $errors->first('passwordreg') }}</span>
+                            <input type="password" name="password" value="{{ old('password') }}" placeholder="Password" required="required">
+                            @if ($errors->has('password'))
+                            <span class="text-danger text-left">{{ $errors->first('password') }}</span>
                             @endif
                             <input type="password" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Confirm Password" required="required">
                             @if ($errors->has('password_confirmation'))
