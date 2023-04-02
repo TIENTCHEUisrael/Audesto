@@ -51,6 +51,7 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user) 
     {
-        return redirect()->intended();
+       // return redirect()->intended();
+       return redirect('/Client/dashboard')->with('success', "Account successfully registered.");
     }
 }

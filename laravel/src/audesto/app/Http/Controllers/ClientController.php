@@ -3,13 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Contact;
+use App\Http\Requests\ContactRequest;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
-    
+
     public function profile()
     {
-        return view('layouts.client.profile');
+        if (Auth::check()) {
+            return view('layouts.client.profile');
+        } else
+            return view('auth.register');
     }
     public function saveprofile()
     {
@@ -17,24 +24,45 @@ class ClientController extends Controller
     }
     public function contact()
     {
-        return view('layouts.client.contact');
+        if (Auth::check()) {
+            return view('layouts.client.contact');
+        } else
+            return view('auth.register');
     }
-    public function savecontact()
+    public function savecontact(Request $validated)
     {
-        return view('layouts.client.reservation');
+        //$validated = $request->validated();
+        $user = auth()->user();
+
+        $query = DB::table('contact')->insert([
+            'subject' => $validated->input('subject'),
+            'email' => $validated->input('email'),
+            'message' => $validated->input('message'),
+            'client' => $user->id
+        ]);
+        return "OK";
     }
     public function faq()
     {
-        return view('layouts.client.faq');
+        if (Auth::check()) {
+            return view('layouts.client.faq');
+        } else
+            return view('auth.register');
     }
 
     public function dashboard()
     {
-        return view('layouts.client.dashboard');
+        if (Auth::check()) {
+            return view('layouts.client.dashboard');
+        } else
+            return view('auth.register');
     }
     public function reservation()
     {
-        return view('layouts.client.reservation');
+        if (Auth::check()) {
+            return view('layouts.client.reservation');
+        } else
+            return view('auth.register');
     }
     public function savereservation()
     {
@@ -42,8 +70,9 @@ class ClientController extends Controller
     }
     public function garage()
     {
-        return view('layouts.client.garage');
+        if (Auth::check()) {
+            return view('layouts.client.garage');
+        } else
+            return view('auth.register');
     }
-
-
 }
