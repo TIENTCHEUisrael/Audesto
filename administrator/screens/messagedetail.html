@@ -11,8 +11,7 @@
     <title>Audesto-admin</title>
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/orther/userPage.css">
-    <script src="../js/orther/userPage.js"></script>
+    <link rel="stylesheet" href="../css/orther/message.css">
 
 </head>
 
@@ -58,14 +57,14 @@
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="../screens/userPage.html">
                     <i class="fas fa-fw fa-user"></i>
                     <span>User</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="../screens/messages.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-mail-bulk"></i>
                     <span>Messages</span></a>
             </li>
@@ -206,41 +205,10 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid my-5">
-
+                <div class="container-fluid">
+                    <h1 class="text-center">Messages Détails</h1>
                     
-                    <h1 class="text-center my-5">Ajout de client</h1>
-                    <form id="formClient" class="mx-auto">
-                        <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="nom">Nom</label>
-                            <input type="text" class="form-control" id="nom" name="nom" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="prenom">Prénom</label>
-                            <input type="text" class="form-control" id="prenom" name="prenom" required>
-                        </div>
-                        </div>
-                        <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="telephone">Téléphone</label>
-                            <input type="text" class="form-control" id="telephone" name="telephone" required>
-                        </div>
-                        </div>
-                        <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="adresse">Adresse</label>
-                            <textarea class="form-control" id="adresse" name="adresse" rows="3" required></textarea>
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary mb-5">Ajouter le client</button>
-                    </form>
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
@@ -298,8 +266,7 @@
 
     <!-- Page level plugins -->
     <script src="../vendor/chart.js/Chart.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-    <script src="../vendor/jquery/jquery.slim.min.js"></script>
+
     <!-- Page level custom scripts -->
     <script src="../js/demo/chart-area-demo.js"></script>
     <script src="../js/demo/chart-bar-demo.js"></script>

@@ -12,6 +12,7 @@
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
     <script src="../js/orther/listes_client.js"></script>
+    <link rel="stylesheet" href="../css/orther/list_client.css">
 
 </head>
 
@@ -65,7 +66,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="./screens/userPage.html">
+                <a class="nav-link" href="../screens/messages.html">
                     <i class="fas fa-fw fa-mail-bulk"></i>
                     <span>Messages</span></a>
             </li>
@@ -107,6 +108,8 @@
                         <a class="collapse-item" href="../screens/Car/reservationC.html">Reservation completed</a>
                         <a class="collapse-item" href="../screens/Car/reservationW.html">Reservation waiting</a>
                         <a class="collapse-item" href="../screens/Car/carAdd.html">Add car</a>
+                        <a class="collapse-item" href="../screens/Car/modelAdd.html">Add model</a>
+                        <a class="collapse-item" href="../screens/Car/listCar.html">list car</a>
                     </div>
                 </div>
             </li>
@@ -208,7 +211,7 @@
                     <div class="row mt-5">
                       <div class="col-md-12">
                         <!-- Bouton d'ajout d'un nouveau client -->
-                        <button id="addClient" type="button" class="btn btn-primary mb-3"><i class="fa fa-user-plus mr-2"></i>Ajouter un client</button>
+                        <button id="addClient" type="button" class="btn btn-primary mb-3"><i class="fa fa-user-plus mr-2"></i><a href="./userPage.html">Ajouter un client</a></button>
                         <!-- Tableau de la liste de clients -->
                         <table id="tableClients" class="table table-striped">
                           <thead>
@@ -230,9 +233,8 @@
                               <td>
                                 <!-- Boutons d'action pour chaque client -->
                                 <div class="btn-group" role="group" aria-label="Actions">
-                                  <button type="button" class="btn btn-secondary viewClient"><i class="fa fa-eye"></i></button> <!-- Bouton pour voir les détails du client -->
-                                  <button type="button" class="btn btn-secondary editClient"><i class="fa fa-edit"></i></button> <!-- Bouton pour éditer le client -->
-                                  <button type="button" class="btn btn-secondary deleteClient"><i class="fa fa-trash"></i></button> <!-- Bouton pour supprimer le client -->
+                                  <button type="button" class="btn btn-secondary viewClient" id="dash"><a href="./clientdetails.html"><i class="fa fa-eye"></i></a></i></button> <!-- Bouton pour voir les détails du client -->
+                                  <button type="button" class="btn btn-secondary deleteClient" id="dash"><a href="#"><i class="fa fa-trash"></i></a></i></button> <!-- Bouton pour supprimer le client -->
                                 </div>
                               </td>
                             </tr>
@@ -243,55 +245,10 @@
                   </div>
                 
                   <!-- Fenêtre modale pour l'ajout ou l'édition d'un client -->
-                  <div class="modal fade" id="modalClient" tabindex="-1" role="dialog" aria-labelledby="modalClientTitle" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="modalClientTitle">Ajout d'un client</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <form id="formModalClient">
-                            <div class="form-row">
-                              <div class="form-group col-md-6">
-                                <label for="nomModal">Nom</label>
-                                <input type="text" class="form-control" id="nomModal" name="nomModal" required>
-                              </div>
-                              <div class="form-group col-md-6">
-                                <label for="prenomModal">Prénom</label>
-                                <input type="text" class="form-control" id="prenomModal" name="prenomModal" required>
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="form-group col-md-6">
-                                <label for="emailModal">Email</label>
-                                <input type="email" class="form-control" id="emailModal" name="emailModal" required>
-                              </div>
-                              <div class="form-group col-md-6">
-                                <label for="telephoneModal">Téléphone</label>
-                                <input type="text" class="form-control" id="telephoneModal" name="telephoneModal" required>
-                              </div>
-                            </div>
-                            <div class="form-row">
-                              <div class="form-group col-md-12">
-                                <label for="adresseModal">Adresse</label>
-                                <textarea class="form-control" id="adresseModal" name="adresseModal" rows="3" required></textarea>
-                              </div>
-                            </div>
-                          </form>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                          <button type="button" id="saveClient" class="btn btn-primary">Ajouter</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  
                 
                   <!-- Fenêtre modale pour la confirmation de suppression d'un client -->
-                  <div class="modal fade" id="modalConfirmation" tabindex="-1" role="dialog" aria-labelledby="modalConfirmationTitle" aria-hidden="true">
+                  <!-- <div class="modal fade" id="modalConfirmation" tabindex="-1" role="dialog" aria-labelledby="modalConfirmationTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -309,7 +266,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 <!-- /.container-fluid -->
 
             </div>

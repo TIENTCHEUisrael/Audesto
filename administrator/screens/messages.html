@@ -11,8 +11,7 @@
     <title>Audesto-admin</title>
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/orther/userPage.css">
-    <script src="../js/orther/userPage.js"></script>
+    <link rel="stylesheet" href="../css/orther/message.css">
 
 </head>
 
@@ -58,14 +57,14 @@
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="../screens/userPage.html">
                     <i class="fas fa-fw fa-user"></i>
                     <span>User</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="../screens/messages.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-mail-bulk"></i>
                     <span>Messages</span></a>
             </li>
@@ -206,41 +205,109 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid my-5">
-
-                    
-                    <h1 class="text-center my-5">Ajout de client</h1>
-                    <form id="formClient" class="mx-auto">
-                        <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="nom">Nom</label>
-                            <input type="text" class="form-control" id="nom" name="nom" required>
+                <div class="container-fluid">
+                    <h1 class="text-center">Liste des Demandes</h1>
+                    <div class="row mt-5">
+                      <div class="col-md-12">                        
+                        <!-- Tableau de la liste de clients -->
+                        <table id="tableClients" class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Client Name</th>
+                              <th>Client email</th>
+                              <th>Message</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- Ici, tu pouvez utiliser une boucle pour générer les lignes de la liste de clients à partir de la base de données -->
+                            <tr>
+                              <td>John</td>
+                              <td>Doe</td>
+                              <td>514-555-1234</td>
+                              <td>
+                                <!-- Boutons d'action pour chaque client -->
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                  <button type="button" class="btn btn-secondary viewClient" id="btn"><a href="./messagedetail.html"><i class="fa fa-eye"></i></a></i></button>     
+                                  <button type="button" class="btn btn-secondary editClient" id="btn"><i class="fa fa-trash"></i></i></button>                                   
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <!-- Fenêtre modale pour l'ajout ou l'édition d'un client -->
+                  <!-- <div class="modal fade" id="modalClient" tabindex="-1" role="dialog" aria-labelledby="modalClientTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalClientTitle">Ajout d'un client</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="prenom">Prénom</label>
-                            <input type="text" class="form-control" id="prenom" name="prenom" required>
+                        <div class="modal-body">
+                          <form id="formModalClient">
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="nomModal">Nom</label>
+                                <input type="text" class="form-control" id="nomModal" name="nomModal" required>
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="prenomModal">Prénom</label>
+                                <input type="text" class="form-control" id="prenomModal" name="prenomModal" required>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="emailModal">Email</label>
+                                <input type="email" class="form-control" id="emailModal" name="emailModal" required>
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="telephoneModal">Téléphone</label>
+                                <input type="text" class="form-control" id="telephoneModal" name="telephoneModal" required>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-12">
+                                <label for="adresseModal">Adresse</label>
+                                <textarea class="form-control" id="adresseModal" name="adresseModal" rows="3" required></textarea>
+                              </div>
+                            </div>
+                          </form>
                         </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                          <button type="button" id="saveClient" class="btn btn-primary">Ajouter</button>
                         </div>
-                        <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                      </div>
+                    </div>
+                  </div>
+                 -->
+                  <!-- Fenêtre modale pour la confirmation de suppression d'un client -->
+                  <!-- <div class="modal fade" id="modalConfirmation" tabindex="-1" role="dialog" aria-labelledby="modalConfirmationTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalConfirmationTitle">Confirmation de suppression</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="telephone">Téléphone</label>
-                            <input type="text" class="form-control" id="telephone" name="telephone" required>
+                        <div class="modal-body">
+                          Êtes-vous sûr(e) de vouloir supprimer ce client?
                         </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                          <button type="button" id="confirmDeleteClient" class="btn btn-primary" data-client-id="">Supprimer</button>
                         </div>
-                        <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="adresse">Adresse</label>
-                            <textarea class="form-control" id="adresse" name="adresse" rows="3" required></textarea>
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary mb-5">Ajouter le client</button>
-                    </form>
+                      </div>-->
+                    </div> 
+                
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
@@ -298,8 +365,7 @@
 
     <!-- Page level plugins -->
     <script src="../vendor/chart.js/Chart.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-    <script src="../vendor/jquery/jquery.slim.min.js"></script>
+
     <!-- Page level custom scripts -->
     <script src="../js/demo/chart-area-demo.js"></script>
     <script src="../js/demo/chart-bar-demo.js"></script>
