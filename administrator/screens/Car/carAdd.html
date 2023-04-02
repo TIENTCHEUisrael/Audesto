@@ -11,7 +11,7 @@
     <title>Audesto-admin</title>
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="../../css/orther/carAdd.css">
 </head>
 
 <body id="page-top">
@@ -97,22 +97,22 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Informations</h6>
                         <a class="collapse-item" href="../../screens/Car/reservationC.html">Reservation completed</a>
-                        <a class="collapse-item" href="../../screens/Car/reservationC.html">Reservation waiting</a>
-                        <a class="collapse-item" href="../../screens/Car/reservationC.html">Add car</a>
+                        <a class="collapse-item" href="../../screens/Car/reservationW.html">Reservation waiting</a>
+                        <a class="collapse-item" href="../../screens/Car/carAdd.html">Add car</a>
                     </div>
                 </div>
             </li>
             <hr class="sidebar-divider">
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="../../screens/listes_client.html">
+                <a class="nav-link" href="../../screens/userPage.html">
                     <i class="fas fa-fw fa-user-circle"></i>
                     <span>Profile</span></a>
             </li>
 
              <!-- Nav Item - Tables -->
              <li class="nav-item">
-                <a class="nav-link" href="../../screens/listes_client.html">
+                <a class="nav-link" href="../../login.html">
                     <i class="fas fa-fw fa-arrow-left"></i>
                     <span>Deconnexion</span></a>
             </li>
@@ -198,7 +198,51 @@
                 <div class="container-fluid">
 
                     
-
+                    <div class="container">
+                        <h2>Enregistrer un produit</h2>
+                        <form>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="nom">Nom du produit</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="text" id="nom" name="nom" placeholder="Nom du produit">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="description">Description</label>
+                                </div>
+                                <div class="col-75">
+                                    <textarea id="description" name="description" placeholder="Description du produit" style="height:200px"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="prix">Prix</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="text" id="prix" name="prix" placeholder="Prix du produit">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-25">
+                                    <label for="categorie">Catégorie</label>
+                                </div>
+                                <div class="col-75">
+                                    <select id="categorie" name="categorie">
+                                        <option value="electromenager">Électroménager</option>
+                                        <option value="informatique">Informatique</option>
+                                        <option value="alimentation">Alimentation</option>
+                                        <option value="jouets">Jouets</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <input type="submit" value="Enregistrer">
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -248,7 +292,7 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap../js/bootstrap.bundle.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -257,7 +301,7 @@
     <script src="../../js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../../vendor/chart../js/Chart.min.js"></script>
+    <script src="../../vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="../../js/demo/chart-area-demo.js"></script>
