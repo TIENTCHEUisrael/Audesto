@@ -14,6 +14,8 @@
     <script src="../js/orther/listes_client.js"></script>
     <link rel="stylesheet" href="../css/orther/list_client.css">
 
+    <!-- Custom styles for this page -->
+    <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -208,66 +210,64 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid my-5">
                     <h1 class="text-center">Liste des clients</h1>
-                    <div class="row mt-5">
-                      <div class="col-md-12">
-                        <!-- Bouton d'ajout d'un nouveau client -->
-                        <button id="addClient" type="button" class="btn btn-primary mb-3"><i class="fa fa-user-plus mr-2"></i><a href="./userPage.html">Ajouter un client</a></button>
-                        <!-- Tableau de la liste de clients -->
-                        <table id="tableClients" class="table table-striped">
-                          <thead>
-                            <tr>
-                              <th>Nom</th>
-                              <th>Prénom</th>
-                              <th>Email</th>
-                              <th>Téléphone</th>
-                              <th>Actions</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <!-- Ici, vous pouvez utiliser une boucle pour générer les lignes de la liste de clients à partir de la base de données -->
-                            <tr>
-                              <td>John</td>
-                              <td>Doe</td>
-                              <td>john.doe@gmail.com</td>
-                              <td>514-555-1234</td>
-                              <td>
-                                <!-- Boutons d'action pour chaque client -->
-                                <div class="btn-group" role="group" aria-label="Actions">
-                                  <button type="button" class="btn btn-secondary viewClient" id="dash"><a href="./clientdetails.html"><i class="fa fa-eye"></i></a></i></button> <!-- Bouton pour voir les détails du client -->
-                                  <button type="button" class="btn btn-secondary deleteClient" id="dash"><a href="#"><i class="fa fa-trash"></i></a></i></button> <!-- Bouton pour supprimer le client -->
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                
-                  <!-- Fenêtre modale pour l'ajout ou l'édition d'un client -->
-                  
-                
-                  <!-- Fenêtre modale pour la confirmation de suppression d'un client -->
-                  <!-- <div class="modal fade" id="modalConfirmation" tabindex="-1" role="dialog" aria-labelledby="modalConfirmationTitle" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="modalConfirmationTitle">Confirmation de suppression</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
+                    
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Clients list</h6>
                         </div>
-                        <div class="modal-body">
-                          Êtes-vous sûr(e) de vouloir supprimer ce client?
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Telephone</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Telephone</th>
+                                            <th>Action</th>
+                                            
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tiger Nixon</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>
+                                                <!-- Boutons d'action pour chaque client -->
+                                                <div class="btn-group" role="group" aria-label="Actions">
+                                                  <button type="button" class="btn btn-secondary viewClient" id="btn"><a href="./clientdetails.html"><i class="fa fa-eye"></i></a></i></button>     
+                                                  <button type="button" class="btn btn-secondary editClient" id="btn"><i class="fa fa-trash"></i></i></button>                                   
+                                                </div>
+                                              </td>                                           
+                                        </tr>
+                                        <tr>
+                                            <td>Garrett Winters</td>
+                                            <td>Accountant</td>
+                                            <td>Tokyo</td>
+                                            <td>
+                                                <!-- Boutons d'action pour chaque client -->
+                                                <div class="btn-group" role="group" aria-label="Actions">
+                                                  <button type="button" class="btn btn-secondary viewClient" id="btn"><a href="./clientdetails.html"><i class="fa fa-eye"></i></a></i></button>     
+                                                  <button type="button" class="btn btn-secondary editClient" id="btn"><i class="fa fa-trash"></i></i></button>                                   
+                                                </div>
+                                              </td>                                            
+                                        </tr>                                        
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                          <button type="button" id="confirmDeleteClient" class="btn btn-primary" data-client-id="">Supprimer</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
-                <!-- /.container-fluid -->
+                    </div>            
+                 </div>
 
             </div>
             <!-- End of Main Content -->
@@ -322,6 +322,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="../js/sb-admin-2.min.js"></script>
+    <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
 
     <!-- Page level plugins -->
     <script src="../vendor/chart.js/Chart.min.js"></script>
@@ -331,6 +332,8 @@
     <script src="../js/demo/chart-area-demo.js"></script>
     <script src="../js/demo/chart-bar-demo.js"></script>
     <script src="../js/demo/chart-pie-demo.js"></script>
+
+    <script src="../js/demo/datatables-demo.js"></script>
 
 </body>
 
