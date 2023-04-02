@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Contact;
-use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
@@ -18,9 +16,28 @@ class ClientController extends Controller
         } else
             return view('auth.register');
     }
-    public function saveprofile()
+    public function saveprofile(Request $validated)
     {
-        return view('layouts.client.profile');
+        $user = auth()->user();
+        DB::table('users')
+            ->where('id', $user->id)
+            ->update(['name' => $validated->input('name'), 'about' => $validated->input('about'),
+                'company' => $validated->input('company'), 'job' => $validated->input('job'),
+                'city' => $validated->input('city'), 'phone' => $validated->input('phone')
+        ]);
+        return 'OK';
+       // return redirect('/Client/profile')->with('success', "Account successfully registered.");
+    }
+    public function savepassword(Request $validated)
+    {
+        $user = auth()->user();
+        DB::table('users')
+            ->where('id', $user->id)
+            ->update(['name' => $validated->input('name'), 'about' => $validated->input('about'),
+                'company' => $validated->input('company'), 'job' => $validated->input('job'),
+                'city' => $validated->input('city'), 'phone' => $validated->input('phone')
+        ]);
+        return "OK";
     }
     public function contact()
     {

@@ -28,7 +28,7 @@
                     </div>
                     <div class="formbox">
                         <div class="form">
-                            <h2>Signin</h2>
+                            <h2>Sign in</h2>
                             <input type="text" name="username" value="{{ old('username') }}" placeholder="Username" required="required" autofocus>
                             @if ($errors->has('username'))
                             <span class="text-danger text-left">{{ $errors->first('username') }}</span>
@@ -38,7 +38,7 @@
                             <span class="text-danger text-left">{{ $errors->first('password') }}</span>
                             @endif
                             <input type="submit"  value="Login">
-                            <p class="signup-text">Don't have an account? <a href="#" onClick="toggleform();">Signup</a></p>
+                            <p class="signup-text">Don't have an account? <a href="#" onClick="toggleform();">Sign up</a></p>
                         </div>
                     </div>
                 </div>
@@ -48,23 +48,11 @@
                 <div class="user signupbox">
                     <div class="formbox">
                         <div class="form">
-                            <h2>Signup</h2>
-                            <input type="text" placeholder="username" name="username">
-                            @if ($errors->has('username'))
-                            <span class="text-danger text-left">{{ $errors->first('username') }}</span>
-                            @endif
-                            <input type="email" name="email" value="{{ old('email') }}" placeholder="name@example.com" required="required" autofocus>
-                            @if ($errors->has('email'))
-                            <span class="text-danger text-left">{{ $errors->first('email') }}</span>
-                            @endif
-                            <input type="password" name="password" value="{{ old('password') }}" placeholder="Password" required="required">
-                            @if ($errors->has('password'))
-                            <span class="text-danger text-left">{{ $errors->first('password') }}</span>
-                            @endif
-                            <input type="password" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Confirm Password" required="required">
-                            @if ($errors->has('password_confirmation'))
-                            <span class="text-danger text-left">{{ $errors->first('password_confirmation') }}</span>
-                            @endif
+                            <h2>Sign up</h2>
+                            <input type="text" placeholder="username" name="usernamereg">
+                            <input type="email" name="emailreg" value="{{ old('email') }}" placeholder="name@example.com" required="required" autofocus>
+                            <input type="text" name="namereg" value="{{ old('name') }}" placeholder="Nom Complet" required="required">
+                            <input type="password" name="passwordreg" value="{{ old('password') }}" placeholder="Password" required="required">
                             <input type="submit" value="Signup">
                             <p class="signup-text">Already have an account?
                                 <a href="#" onClick="toggleform();">Login</a>

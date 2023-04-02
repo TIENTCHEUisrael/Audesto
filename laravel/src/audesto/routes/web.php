@@ -51,7 +51,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::post('Client/reservation', 'ClientController@savereservation')->name('client.savereservation');
 
     Route::get('Client/profile', 'ClientController@profile')->name('client.profile');
-    Route::post('Client/profile', 'ClientController@saveprofile')->name('client.profile');
+    Route::post('Client/profile', 'ClientController@saveprofile')->name('client.saveprofile');
+
+
 
     Route::get('Client/faq', 'ClientController@faq')->name('client.faq');
     Route::get('Client/garage', 'ClientController@garage')->name('client.garage');
