@@ -77,7 +77,10 @@ class ClientController extends Controller
     public function reservation()
     {
         if (Auth::check()) {
-            return view('layouts.client.reservation');
+            $cities = DB::select('select DISTINCT c.name, c.id from points p join cities c on p.city = c.id');
+            $points = DB::select('select p.* , c.name "cit" from points p join cities c on p.city = c.id');
+            $model = DB::select('select * from modele');
+            return view('layouts.client.reservation',['cities'=>$cities, 'points'=>$points, 'modeles'=> $model]);
         } else
             return view('auth.register');
     }

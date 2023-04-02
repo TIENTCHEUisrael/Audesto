@@ -225,7 +225,7 @@
       <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1250" data-animation-delay="250"> Nos fournisseurs fournissent des véhicules à transmission automatique et manuelle aux États-Unis, cependant, la disponibilité peut varier en fonction du fournisseur et de l'endroit où vous louez le véhicule.</p>
       <div class="u-list u-list-1">
         <div class="u-repeater u-repeater-1">
-          @foreach ($models as $model)
+          @foreach ($models as $model) 
           <div class="u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-container-layout-3">
               <img alt class="u-image u-image-contain u-image-default u-image-2" data-image-width="986" data-image-height="403" src="{!! url('images/12.jpg') !!}" data-animation-name="customAnimationIn" data-animation-duration="1500">
