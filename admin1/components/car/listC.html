@@ -11,6 +11,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link rel="stylesheet" href="../../assets/css/orther/listC.css">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
@@ -219,7 +220,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../car/listC.html">
+                        <a href="../car/listC.html" class="active">
                             <i class="bi bi-list"></i><span>List Car</span>
                         </a>
                     </li>
@@ -279,7 +280,120 @@
         </ul>
 
     </aside><!-- End Sidebar-->
-    <main id="main" class="main"></main>
+    <main id="main" class="main">
+        <div class="pagetitle">
+            <h1>List of Cars</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                <li class="breadcrumb-item">Cars</li>
+                <li class="breadcrumb-item active">List Car</li>
+              </ol>
+            </nav>
+        </div><!-- End Page Title -->
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-12">
+        
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">List</h5>      
+                      <!-- Vertically centered scrollable modal -->             
+        
+                      <!-- Table with stripped rows -->
+                      <table class="table datatable">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Matricule</th>
+                            <th scope="col">Model</th>
+                            <th scope="col">Disponibilité</th>
+                            <th scope="col">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>TUUVKBIUAIEO1</td>
+                            <td>Designer</td>
+                            <td>
+                               <span class="badge bg-success">Available</span>
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                    <button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button>
+                                    <button type="button" class="btn btn-danger"><i class="bi bi-trash2-fill"></i></button>
+                                    <button type="button" class="btn btn-light"><a href="./caredit.html"><i class="bi bi-pen"></i></button>                                            
+                                </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Bridie Kessler</td>
+                            <td>Developer</td>
+                            <td>
+                                <span class="badge bg-danger">Unavailable</span>
+                            </td>
+                            <td><div class="btn-group" role="group" aria-label="Actions">
+                                <button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="bi bi-trash2-fill"></i></button>
+                                <button type="button" class="btn btn-light"><a href="./caredit.html"><i class="bi bi-pen"></i></button>                                            
+                            </div></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Ashleigh Langosh</td>
+                            <td>Finance</td>
+                            <td>
+                                <span class="badge bg-success">Available</span>
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                    <button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button>
+                                    <button type="button" class="btn btn-danger"><i class="bi bi-trash2-fill"></i></button>
+                                    <button type="button" class="btn btn-light"><a href="./caredit.html"><i class="bi bi-pen"></i></button>                                              
+                                </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Angus Grady</td>
+                            <td>HR</td>
+                            <td>
+                                <span class="badge bg-danger">Unavailable</span>
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                    <button type="button"  class="btn btn-info"><i class="bi bi-eye"></i></a></button>
+                                    <button type="button" class="btn btn-danger"><i class="bi bi-trash2-fill"></i></button>  
+                                    <button type="button" class="btn btn-light"><a href="./caredit.html"><i class="bi bi-pen"></i></button>                                             
+                                </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Raheem Lehner</td>
+                            <td>Dynamic Division Officer</td>
+                            <td>
+                                <span class="badge bg-success">Available</span>
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                    <button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button>
+                                    <button type="button" class="btn btn-danger"><i class="bi bi-trash2-fill"></i></button>     
+                                    <button type="button" class="btn btn-light"><a href="./caredit.html"><i class="bi bi-pen"></i></button>                                         
+                                </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>        
+                    </div>
+                  </div>
+        
+                </div>
+              </div>
+        </section>
+    </main>
     <!-- Vendor JS Files -->
     <script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
