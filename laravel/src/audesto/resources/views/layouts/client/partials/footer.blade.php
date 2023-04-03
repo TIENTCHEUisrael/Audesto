@@ -11,6 +11,7 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
+    <script src="{!! url('assets/clientassets/js/reservation/jquery-3.5.1.min.js') !!}"></script>
     <script src="{!! url('assets/clientassets/vendor/apexcharts/apexcharts.min.js') !!}"></script>
     <script src="{!! url('assets/clientassets/vendor/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>
     <script src="{!! url('assets/clientassets/vendor/chart.js/chart.umd.js') !!}"></script>

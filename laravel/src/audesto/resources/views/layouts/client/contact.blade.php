@@ -92,7 +92,7 @@
                   <div class="error-message"></div>
                   <div class="sent-message">Message envoyé avec succès. Merci!</div>
 
-                  <button type="submit" class="btn btn-primary" >Send Message</button>
+                  <button type="submit" class="btn btn-primary" >Envoyer le Message</button>
                   <!-- Vertically centered Modal -->
                   <!-- End Vertically centered Modal-->
 
