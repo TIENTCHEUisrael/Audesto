@@ -232,7 +232,7 @@
               <div class="u-container-align-left u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-2" data-animation-name="customAnimationIn" data-animation-duration="1250" data-animation-delay="250">
                 <div class="u-container-layout u-container-layout-4">
                   <h4 class="u-align-left u-text u-text-6">{{ $model->nom }}</h4>
-                  <p class="u-align-left u-text u-text-7"> <span class="u-file-icon u-icon"><img src="{!! url('images/903530.png') !!}" alt></span>  Valise : {{ $model->valises }}
+                  <p class="u-align-left u-text u-text-7"> <span class="u-file-icon u-icon"><img src=" {{$model -> image}}" alt></span>  Valise : {{ $model->valises }}
                   </p>
                   <p class="u-align-left u-text u-text-8"> {{$model -> description}}</p>
                   <a href="#" class="u-active-palette-1-dark-2 u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-2 u-palette-1-base u-radius-50 u-btn-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Reserve maintenant</a>
@@ -241,76 +241,6 @@
             </div>
           </div>
           @endforeach
-          <div class="u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-1">
-              <img alt class="u-image u-image-contain u-image-default u-image-1" data-image-width="986" data-image-height="403" src="{!! url('images/billionphotos1198446min.jpg') !!}" data-animation-name="customAnimationIn" data-animation-duration="1500">
-              <div class="u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1" data-animation-name="customAnimationIn" data-animation-duration="1250" data-animation-delay="250">
-                <div class="u-container-layout u-container-layout-2">
-                  <h4 class="u-align-left u-text u-text-3"> Économie</h4>
-                  <p class="u-align-left u-text u-text-4"> <span class="u-file-icon u-icon"><img src="{!! url('images/903530.png') !!}" alt></span>  Valise : 2
-                  </p>
-                  <p class="u-align-left u-text u-text-5"> Très populaires auprès des voyageurs à petit budget visitant les États-Unis (généralement pour des projets de voyage à court terme), les voitures économiques entrent dans la catégorie des solutions de location à bas prix. Non seulement peu coûteux, ces véhicules de location sont également économes en carburant.</p>
-                  <a href="https://nicepage.com/website-design" class="u-active-palette-1-dark-2 u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-2 u-palette-1-base u-radius-50 u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Reserve maintenant</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-3">
-              <img alt class="u-image u-image-contain u-image-default u-image-2" data-image-width="986" data-image-height="403" src="{!! url('images/12.jpg') !!}" data-animation-name="customAnimationIn" data-animation-duration="1500">
-              <div class="u-container-align-left u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-2" data-animation-name="customAnimationIn" data-animation-duration="1250" data-animation-delay="250">
-                <div class="u-container-layout u-container-layout-4">
-                  <h4 class="u-align-left u-text u-text-6">Le luxe</h4>
-                  <p class="u-align-left u-text u-text-7"> <span class="u-file-icon u-icon"><img src="{!! url('images/903530.png') !!}" alt></span>  Valise : 2
-                  </p>
-                  <p class="u-align-left u-text u-text-8"> Les clients visitant l'Amérique louent des voitures de luxe pour les affaires, les vacances et d'autres occasions spéciales de la vie comme les anniversaires. Ils sont utilisés principalement pour le confort et le quotient de style qu'ils ajoutent au voyage.</p>
-                  <a href="https://nicepage.com/website-design" class="u-active-palette-1-dark-2 u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-2 u-palette-1-base u-radius-50 u-btn-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Reserve maintenant</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-5">
-              <img alt class="u-image u-image-contain u-image-default u-image-3" data-image-width="986" data-image-height="403" src="{!! url('images/xxx.jpg') !!}" data-animation-name="customAnimationIn" data-animation-duration="1500">
-              <div class="u-container-align-left u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-3" data-animation-name="customAnimationIn" data-animation-duration="1250" data-animation-delay="250">
-                <div class="u-container-layout u-container-layout-6">
-                  <h4 class="u-align-left u-text u-text-9"> Convertible</h4>
-                  <p class="u-align-left u-text u-text-10"> <span class="u-file-icon u-icon"><img src="{!! url('images/903530.png') !!}" alt></span>  Valise : 2
-                  </p>
-                  <p class="u-align-left u-text u-text-11"> Très populaires auprès des voyageurs à petit budget visitant les États-Unis (généralement pour des projets de voyage à court terme), les voitures économiques entrent dans la catégorie des solutions de location à bas prix. Non seulement peu coûteux, ces véhicules de location sont également économes en carburant.</p>
-                  <a href="https://nicepage.com/website-design" class="u-active-palette-1-dark-2 u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-2 u-palette-1-base u-radius-50 u-btn-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Reserve maintenant</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-7">
-              <img alt class="u-image u-image-contain u-image-default u-image-4" data-image-width="986" data-image-height="403" src="{!! url('images/13.jpg') !!}" data-animation-name="customAnimationIn" data-animation-duration="1500">
-              <div class="u-container-align-left u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-4" data-animation-name="customAnimationIn" data-animation-duration="1250" data-animation-delay="250">
-                <div class="u-container-layout u-container-layout-8">
-                  <h4 class="u-align-left u-text u-text-12"> VUS</h4>
-                  <p class="u-align-left u-text u-text-13"> <span class="u-file-icon u-icon"><img src="{!! url('images/903530.png') !!}" alt></span>  Valise : 2
-                  </p>
-                  <p class="u-align-left u-text u-text-14"> Les voyages en voiture, remplis d'activités comme le camping et les sports nautiques, sont mieux planifiés avec la location de VUS. La plupart des familles visitant les États-Unis louent des SUV pour des voyages sûrs mais luxueux dans des endroits comme Disney World et des parcs nationaux comme le Grand Canyon.</p>
-                  <a href="https://nicepage.com/website-design" class="u-active-palette-1-dark-2 u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-2 u-palette-1-base u-radius-50 u-btn-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Reserve maintenant</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-9">
-              <img alt class="u-image u-image-contain u-image-default u-image-5" data-image-width="986" data-image-height="403" src="{!! url('images/ghhghg.jpg') !!}" data-animation-name="customAnimationIn" data-animation-duration="1500">
-              <div class="u-container-align-left u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-5" data-animation-name="customAnimationIn" data-animation-duration="1250" data-animation-delay="250">
-                <div class="u-container-layout u-container-layout-10">
-                  <h4 class="u-align-left u-text u-text-15"> Fourgonnette/Minifourgonnette</h4>
-                  <p class="u-align-left u-text u-text-16"> <span class="u-file-icon u-icon"><img src="{!! url('images/566235.png') !!}" alt></span> Places : 7/8   <span class="u-file-icon u-icon"><img src="{!! url('images/903530.png') !!}" alt></span>  Valise : 5
-                  </p>
-                  <p class="u-align-left u-text u-text-17"> Une location de fourgonnette ou de minifourgonnette vous donne de l'espace pour les jambes et les bagages que les autres catégories de voitures n'ont pas. Sur la base du nombre de places assises, ils sont classés en location de fourgonnettes et minifourgonnettes 7 passagers, 8 passagers, 9 passagers, 10 passagers, 12 passagers et 15 passagers.</p>
-                  <a href="https://nicepage.com/website-design" class="u-active-palette-1-dark-2 u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-2 u-palette-1-base u-radius-50 u-btn-5" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Reserve maintenant</a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <p class="u-align-center u-text u-text-default u-text-18">Images de <a href="https://www.freepik.com/" class="u-active-none u-border-1 u-border-active-black u-border-hover-black u-border-no-left u-border-no-right u-border-no-top u-border-palette-2-base u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-link u-button-style u-hover-none u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-6" target="_blank">Freepik</a>

@@ -33,6 +33,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          */
         Route::get('/login', 'LoginController@show')->name('login.show');
         Route::post('/login', 'LoginController@login')->name('login.perform');
+        Route::post('/alogin', 'LoginController@login')->name('login.adminlogin');
+        Route::get('/alogin', 'LoginController@adshow')->name('login.adshow');
 
     });
 
@@ -64,10 +66,26 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('Client/contact', 'ClientController@contact')->name('client.contact');
     Route::post('Client/contact', 'ClientController@savecontact')->name('client.savecontact');
 
-    /*Route::prefix('Client')->group(function(){
-        Route::get('/register', [ClientController::class, 'register'])->name('register');
-        Route::post('/register', [ClientController::class, 'store'])->name('client.store');
-        Route::post('/connexion', [ClientController::class, 'connected'])->name('HasConnected');
-        Route::post('/preoccupation', [ClientController::class, 'probleme'])->name('preoccupation');
-    });*/
+
+
+    /**
+     * Administrateur routes
+     */
+    Route::get('/Administrateur/login', 'LoginController@administrateur')->name('login.administrateur');
+    Route::get('/Administrateur/dashboard', 'AdministrateurController@dashboard')->name('administrateur.dashboard');
+
+    Route::get('Administrateur/users', 'AdministrateurController@listusers')->name('administrateur.listusers');
+
+    Route::get('Administrateur/model', 'AdministrateurController@reservation')->name('Administrateur.reservation');
+    Route::post('Administrateur/model', 'AdministrateurController@savereservation')->name('Administrateur.savereservation');
+
+    Route::post('Administrateur/postreservation', 'ReservationController@savereservation')->name('reservation.savereservation');
+    Route::post('Administrateur/postreservation', 'ReservationController@savereservation')->name('reservation.savereservation');
+
+    Route::get('Administrateur/profile', 'AdministrateurController@profile')->name('Administrateur.profile');
+    Route::post('Administrateur/profile', 'AdministrateurController@saveprofile')->name('Administrateur.saveprofile');
+
+    Route::get('Administrateur/messages', 'AdministrateurController@contact')->name('Administrateur.contact');
+    Route::post('Administrateur/messages', 'AdministrateurController@savecontact')->name('Administrateur.savecontact');
+
 });
