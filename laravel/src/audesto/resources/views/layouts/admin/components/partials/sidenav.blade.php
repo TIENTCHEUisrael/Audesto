@@ -24,7 +24,7 @@
                 <a href="./user/#">
                     <i class="bi bi-circle"></i><span>Accordion</span>
                 </a>
-            </li>                    
+            </li>
         </ul>
     </li><!-- End Components Nav -->
 
@@ -85,11 +85,15 @@
                     <i class="bi bi-circle"></i><span>Listes</span>
                 </a>
             </li>
-            
+            <li>
+                <a href="../agenceAdd.html">
+                    <i class="bi bi-circle"></i><span>Ajouter Agences</span>
+                </a>
+            </li>
         </ul>
     </li><!-- End Charts Nav -->
 
-   
+
 
     <li class="nav-heading">Pages</li>
 
