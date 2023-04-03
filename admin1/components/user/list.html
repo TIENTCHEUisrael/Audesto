@@ -186,15 +186,10 @@
                 </a>
                 <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="./list.html">
+                        <a href="./list.html"class="active">
                             <i class="bi bi-person"></i><span>List User</span>
                         </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bi bi-circle"></i><span>Accordion</span>
-                        </a>
-                    </li>                    
+                    </li>                  
                 </ul>
             </li><!-- End Components Nav -->
 
@@ -279,7 +274,99 @@
         </ul>
 
     </aside><!-- End Sidebar-->
-    <main id="main" class="main"></main>
+    <main id="main" class="main">
+        <div class="pagetitle">
+            <h1>List Client</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                <li class="breadcrumb-item">User</li>
+                <li class="breadcrumb-item active">List Client</li>
+              </ol>
+            </nav>
+        </div><!-- End Page Title -->
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-12">
+        
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">List</h5>                     
+        
+                      <!-- Table with stripped rows -->
+                      <table class="table datatable">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Brandon Jacob</td>
+                            <td>Designer</td>
+                            <td>28</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                    <button type="button" class="btn btn-info"><a href="./userDetail.html"><i class="bi bi-eye"></i></a></button>                            
+                                </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Bridie Kessler</td>
+                            <td>Developer</td>
+                            <td>35</td>
+                            <td><div class="btn-group" role="group" aria-label="Actions">
+                                <button type="button" class="btn btn-info"><a href="./userDetail.html"><i class="bi bi-eye"></i></a></button>                       
+                            </div></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Ashleigh Langosh</td>
+                            <td>Finance</td>
+                            <td>45</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                    <button type="button" class="btn btn-info"><a href="./userDetail.html"><i class="bi bi-eye"></i></a></button>                           
+                                </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Angus Grady</td>
+                            <td>HR</td>
+                            <td>34</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                    <button type="button"  class="btn btn-info"><a href="./userDetail.html"><i class="bi bi-eye"></i></a></button>                  
+                                </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Raheem Lehner</td>
+                            <td>Dynamic Division Officer</td>
+                            <td>47</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                    <button type="button" class="btn btn-info"><a href="./userDetail.html"><i class="bi bi-eye"></i></a></button>                           
+                                </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>        
+                    </div>
+                  </div>
+        
+                </div>
+              </div>
+        </section>
+    </main>
     <!-- Vendor JS Files -->
     <script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
