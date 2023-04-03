@@ -8,48 +8,134 @@ use Illuminate\Support\Facades\DB;
 
 class AdministrateurController extends Controller
 {
-
-    public function login(Request $validated)
+    public function userlist()
     {
         if (Auth::check()) {
-            if(auth()->user()->isadmin ==1){
-
-            }
-            else{
-            return view('layouts.client.profile');}
+            return view('layouts.admin.components.user.list');
         } else
             return view('auth.register');
     }
-    public function saveprofile(Request $validated)
-    {
-        $user = auth()->user();
-        DB::table('users')
-            ->where('id', $user->id)
-            ->update(['name' => $validated->input('name'), 'about' => $validated->input('about'),
-                'company' => $validated->input('company'), 'job' => $validated->input('job'),
-                'city' => $validated->input('city'), 'phone' => $validated->input('phone')
-        ]);
-        return redirect('/Client/profile')->with('success', "Account successfully registered.");
-       // return redirect('/Client/profile')->with('success', "Account successfully registered.");
-    }
-    public function savepassword(Request $validated)
-    {
-        $user = auth()->user();
-        DB::table('users')
-            ->where('id', $user->id)
-            ->update(['name' => $validated->input('name'), 'about' => $validated->input('about'),
-                'company' => $validated->input('company'), 'job' => $validated->input('job'),
-                'city' => $validated->input('city'), 'phone' => $validated->input('phone')
-        ]);
-        return redirect('/Client/profile')->with('success', "Account successfully registered.");
-    }
-    public function contact()
+    public function addmodel()
     {
         if (Auth::check()) {
-            return view('layouts.client.contact');
+            return view('auth.layouts.admin.components.user.list');
         } else
             return view('auth.register');
     }
+    public function listmodel()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function detailmodel()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function updatemodel()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function deletemodel()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function addcar()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function listcar()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function deletecar()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function cardetail()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function updatecar()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function reservation()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function updatereservation()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function detailreservation()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+
+    public function profile()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function password()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function message()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+    public function sendmessage()
+    {
+        if (Auth::check()) {
+            return view('auth.layouts.admin.components.user.list');
+        } else
+            return view('auth.register');
+    }
+
     public function savecontact(Request $validated)
     {
         //$validated = $request->validated();
@@ -84,56 +170,6 @@ class AdministrateurController extends Controller
             $model = DB::select('select m.*, t.nom "trans" from modele m join transmission t on m.transmission = t.id limit 10');
             $contact = DB::select('select c.message "question", rep.message "reponse" from contact c join reponse rep on rep.question = c.id where client='.$user->id);
             return view('layouts.admin.components.dashboard',['complet'=>$complet, 'incomplet'=>$incomplet, 'reservations'=> $reservations, 'modeles'=>$model, 'contact'=>$contact]);
-        } else
-            return view('auth.register');
-    }
-
-    public function reservation()
-    {
-        if (Auth::check()) {
-            $cities = DB::select('select DISTINCT c.name, c.id from points p join cities c on p.city = c.id');
-            $points = DB::select('select p.* , c.name "cit" from points p join cities c on p.city = c.id');
-            $model = DB::select('select m.*, t.nom "trans" from modele m join transmission t on m.transmission = t.id');
-            return view('layouts.client.reservation',['cities'=>$cities, 'points'=>$points, 'modeles'=> $model]);
-        } else
-            return view('auth.register');
-    }
-    public function dateDiff($date1, $date2)
-    {
-        $date1_ts = strtotime($date1);
-        $date2_ts = strtotime($date2);
-        $diff = $date2_ts - $date1_ts;
-        return round($diff / 86400);
-    }
-    public function savereservation(Request $validated)
-    {
-        $pu = DB::select('select prix from modele where id=' . $validated->input('model'));
-        $days = $this->dateDiff($validated->input('date_recup'), $validated->input('date_depot'));
-        $montant = ($days * $pu[0]->prix);
-        $user = auth()->user();
-        $query = DB::table('reservation')->insert([
-            'date_recup' => $validated->input('date_recup'),
-            'date_depot' => $validated->input('date_depot'),
-            'agence_recup' => $validated->input('agence_recup'),
-            'agence_depot' => $validated->input('agence_depot'),
-            'model' => $validated->input('model'),
-            'montant' => $montant,
-            'client' => $user->id
-        ]);
-        return redirect('/Client/reservation')->with('success', "Reservation succesfully made.");
-    }
-    public function users()
-    {
-        return view('layouts.admin.components.login');
-    }
-    public function model()
-    {
-        return view('layouts.admin.components.login');
-    }
-    public function garage()
-    {
-        if (Auth::check()) {
-            return view('layouts.client.garage');
         } else
             return view('auth.register');
     }
