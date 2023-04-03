@@ -279,7 +279,69 @@
         </ul>
 
     </aside><!-- End Sidebar-->
-    <main id="main" class="main"></main>
+    <main id="main" class="main">
+        <div class="pagetitle">
+            <h1>Demandes</h1>
+            <nav>
+                <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item ">Messages</li>$
+                <li class="breadcrumb-item active">Messages Détails</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+        <section class="section contact ">
+            <div class="row gy-4 text-center">           
+        
+                <div class="col-xl-6">
+                  <div class="card p-4">
+                    <form action="forms/contact.php" method="post" class="php-email-form">
+                      <div class="row gy-4">
+        
+                        <div class="col-md-6">
+                          <input type="text" name="name" class="form-control" placeholder="Client Name" readonly>
+                        </div>
+        
+                        <div class="col-md-6 ">
+                          <input type="email" class="form-control" name="email" placeholder="Client Email" readonly>
+                        </div>
+        
+                        <div class="col-md-12">
+                          <input type="text" class="form-control" name="subject" placeholder="Subject" readonly>
+                        </div>
+        
+                        <div class="col-md-12">
+                          <textarea class="form-control" name="message" rows="6" placeholder="Message" readonly></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <textarea class="form-control" name="message" rows="6" placeholder="response" required></textarea>
+                          </div>
+        
+                        <div class="col-md-12 text-center">
+                          <div class="loading">Loading</div>
+                          <div class="error-message"></div>
+                          <div class="sent-message">Your message has been sent. Thank you!</div>
+        
+                          <button type="submit">Send Response</button>
+                        </div>
+        
+                      </div>
+                    </form>
+                  </div>
+        
+                </div>
+        
+              </div>
+        </section>
+    </main>
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Audesto</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <a href="#">2SI-INC</a>
+        </div>
+    </footer><!-- End Footer -->
     <!-- Vendor JS Files -->
     <script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
