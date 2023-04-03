@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 @include('layouts.admin.components.partials.topbar')
 
 <body>
@@ -12,12 +12,11 @@
     @include('layouts.admin.components.partials.sidenav')
     <main id="main" class="main">
         <div class="pagetitle">
-            <h1>List Client</h1>
+            <h1>Liste des Voitures</h1>
             <nav>
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-                <li class="breadcrumb-item">User</li>
-                <li class="breadcrumb-item active">List Client</li>
+                <li class="breadcrumb-item"><a href="{{administrateur.dashboard}}">Home</a></li>
+                <li class="breadcrumb-item">Voitures</li>
               </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -27,29 +26,34 @@
         
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">List</h5>                     
+                      <h5 class="card-title">Liste</h5>      
+                      <!-- Vertically centered scrollable modal -->             
         
                       <!-- Table with stripped rows -->
                       <table class="table datatable">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Contact</th>
-                            <th scope="col">Job</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">Matricule</th>
+                            <th scope="col">Model</th>
+                            <th scope="col">Disponibilité</th>
+                            <th scope="col">Actions</th>
                           </tr>
                         </thead>
                         <tbody>
-                        @foreach ($users as $user)
+                            @foreach($voitures as $voiture)
                           <tr>
-                            <th scope="row">#{{ $user->id}}</th>
-                            <td> {{$user->name}}</td>
-                            <td>Tel : <bold> {{$user->phone}} </bold> Email : <bold>{{$user->email}}</bold></td>
-                            <td>{{$user->job}}</td>
+                            <th scope="row">{{$voiture->id}}</th>
+                            <td>{{$voiture->matricule}}</td>
+                            <td>{{$voiture->matricule}}</td>
+                            <td>
+                               <span class="badge bg-success">Available</span>
+                            </td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Actions">
-                                    <button type="button" class="btn btn-info"><a href="{{ route('administrateur.userdetail', [$user->id])}}"><i class="bi bi-eye"></i></a></button>                            
+                                    <button type="button" class="btn btn-info"><i class="bi bi-eye"></i></button>
+                                    <button type="button" class="btn btn-danger"><i class="bi bi-trash2-fill"></i></button>
+                                    <button type="button" class="btn btn-light"><a href="./caredit.html"><i class="bi bi-pen"></i></button>                                            
                                 </div>
                             </td>
                           </tr>
@@ -63,6 +67,7 @@
               </div>
         </section>
     </main>
+    <!-- ======= Footer ======= -->
     @include('layouts.admin.components.partials.footer')
 </body>
 </html>
