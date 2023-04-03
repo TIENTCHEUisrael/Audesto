@@ -72,6 +72,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      * Administrateur routes
      */
     Route::get('/Administrateur/login', 'LoginController@administrateur')->name('login.administrateur');
+    Route::get('/Administrateur/userlist', 'AdministrateurController@userlist')->name('administrateur.userlist');
     Route::get('/Administrateur/dashboard', 'AdministrateurController@dashboard')->name('administrateur.dashboard');
 
     Route::get('Administrateur/users', 'AdministrateurController@listusers')->name('administrateur.listusers');
