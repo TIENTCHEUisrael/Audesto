@@ -251,7 +251,7 @@
                 </a>
                 <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="../reservations/reservations.html">
+                        <a href="./reservations.html" class="active">
                             <i class="bi bi-circle"></i><span>Listes</span>
                         </a>
                     </li>
@@ -279,7 +279,68 @@
         </ul>
 
     </aside><!-- End Sidebar-->
-    <main id="main" class="main"></main>
+    <main id="main" class="main">
+        <div class="pagetitle">
+            <h1>Détails</h1>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                <li class="breadcrumb-item">Reservation</li>
+                <li class="breadcrumb-item">List Reservation</li>
+                <li class="breadcrumb-item active">Reservation Détails</li>
+              </ol>
+            </nav>
+        </div><!-- End Page Title -->
+        <section class="section">
+            <section class="section">
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Réservation</h5>
+        
+                      <!-- Multi Columns Form -->
+                      <form class="row g-3">
+                        <div class="col-md-12">
+                          <label for="inputName5" class="form-label">Client</label>
+                          <input type="text" class="form-control" id="inputName5"placeholder="Client fo reservation" readonly>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputAddress5" class="form-label">Agence de recuperation</label>
+                            <input type="text" class="form-control" id="inputAddres5s" placeholder="Agence of Car"readonly>
+                          </div>    
+                        <div class="col-md-6">
+                          <label for="inputAddress5" class="form-label">Agence de dépot</label>
+                          <input type="text" class="form-control" id="inputAddres5s" placeholder="Agence of Car"readonly>
+                        </div>                                 
+                        <div class="col-md-6">
+                            <label for="formFileDisabled" class="form-label">Date récupération</label>
+                            <input class="form-control" type="datetime-local" readonly/>
+                        </div>                             
+                        <div class="col-md-6">
+                            <label for="formFileDisabled" class="form-label">Date Dépot</label>
+                            <input class="form-control" type="datetime-local" readonly/>
+                        </div> 
+                        <div class="col-md-6">
+                            <label for="formFileDisabled" class="form-label">Montant</label>
+                            <input class="form-control" type="text" placeholder="Montant de la reservation" readonly/>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputState" class="form-label">Voiture</label>
+                            <select id="inputState" class="form-select">
+                              <option selected>Choose Voiture...</option>
+                              <option>...</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center">
+                          <button type="submit" class="btn btn-primary">Soumettre</button>
+                        </div>
+                      </form><!-- End Multi Columns Form -->
+        
+                    </div>
+                  </div>
+            </section>
+        </section>
+    </main>
     <!-- Vendor JS Files -->
     <script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
