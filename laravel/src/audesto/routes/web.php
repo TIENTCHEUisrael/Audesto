@@ -79,14 +79,20 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/Administrateur/listcar', 'AdministrateurController@listcar')->name('administrateur.listcar');
     Route::get('/Administrateur/cardetail', 'AdministrateurController@cardetail')->name('administrateur.cardetail');
     Route::get('Administrateur/reservation', 'AdministrateurController@reservation')->name('Administrateur.reservation');
+    Route::get('Administrateur/profile', 'AdministrateurController@profile')->name('Administrateur.profile');
+    Route::get('Administrateur/message', 'AdministrateurController@message')->name('Administrateur.message');
 
+    Route::post('Administrateur/profile', 'AdministrateurController@saveprofile')->name('Administrateur.saveprofile');
     Route::post('Administrateur/savereservation', 'AdministrateurController@savereservation')->name('Administrateur.savereservation');
     Route::post('Administrateur/updatereservation', 'AdministrateurController@updatereservation')->name('Administrateur.updatereservation');
+    Route::post('Administrateur/detailreservation', 'AdministrateurController@detailreservation')->name('Administrateur.detailreservation');
     Route::post('Administrateur/updatemodel', 'AdministrateurController@updatemodel')->name('Administrateur.updatemodel');
     Route::post('Administrateur/deletecar', 'AdministrateurController@deletecar')->name('Administrateur.deletecar');
     Route::post('Administrateur/updatecar', 'AdministrateurController@updatecar')->name('Administrateur.updatecar');
     Route::post('Administrateur/deletemodel', 'AdministrateurController@deletemodel')->name('Administrateur.deletemodel');
     Route::post('Administrateur/addmodel', 'AdministrateurController@addmodel')->name('Administrateur.addmodel');
+    Route::post('Administrateur/sendmessage', 'AdministrateurController@sendmessage')->name('Administrateur.sendmessage');
+    Route::post('Administrateur/savecontact', 'AdministrateurController@savecontact')->name('Administrateur.savecontact');
 
 
 
@@ -94,8 +100,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::post('Administrateur/postmodel', 'ReservationController@addmodel')->name('reservation.addmodel');
     Route::post('Administrateur/addcar', 'ReservationController@addcar')->name('reservation.addcar');
 
-    Route::get('Administrateur/profile', 'AdministrateurController@profile')->name('Administrateur.profile');
-    Route::post('Administrateur/profile', 'AdministrateurController@saveprofile')->name('Administrateur.saveprofile');
 
     Route::get('Administrateur/messages', 'AdministrateurController@contact')->name('Administrateur.contact');
     Route::post('Administrateur/messages', 'AdministrateurController@savecontact')->name('Administrateur.savecontact');
