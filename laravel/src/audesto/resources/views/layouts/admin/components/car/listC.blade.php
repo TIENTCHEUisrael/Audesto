@@ -15,7 +15,7 @@
             <h1>Liste des Voitures</h1>
             <nav>
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{administrateur.dashboard}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('administrateur.dashboard')}}">Home</a></li>
                 <li class="breadcrumb-item">Voitures</li>
               </ol>
             </nav>
@@ -45,9 +45,16 @@
                           <tr>
                             <th scope="row">{{$voiture->id}}</th>
                             <td>{{$voiture->matricule}}</td>
-                            <td>{{$voiture->matricule}}</td>
+                            <td>{{$voiture->model}}</td>
                             <td>
-                               <span class="badge bg-success">Available</span>
+                                @if($voiture->disponibilite ==1){
+                                    <span class="badge bg-success">Disponible</span>
+                                }
+                                @endif
+                                @if($voiture->disponibilite !=1){
+                                    <span class="badge bg-danger">Indisponible</span>
+                                }
+                                @endif
                             </td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Actions">

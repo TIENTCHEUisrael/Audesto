@@ -31,37 +31,45 @@
 
                             <!-- Table with stripped rows -->
                             <table class="table table-borderless">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Appercu</th>
-                                                <th scope="col">Modele</th>
-                                                <th scope="col">Caractéristiques</th>
-                                                <th scope="col">Tariff</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($modeles as $model)
-                                            <tr>
-                                                <th scope="row">
-                                                    <img src="{{$model -> image}}" alt="Profile" class="rounded-circle" width="180" height="100">
-                                                </th>
-                                                <td>
-                                                    <bold>{{$model -> nom}}</bold>
-                                                </td>
-                                                <td><i class="ri-door-fill"></i>{{$model -> portes}} | <i class="ri-luggage-deposit-fill"></i>{{$model -> valises}} | <i class="ri-user-3-fill"></i>{{$model -> places}}
-                                                    | <i class="bx bx-sitemap"></i>{{$model -> trans}}
-                                                    <br>
-                                                    <bold>Longeur :</bold> {{$model -> longeur}} <br>
-                                                    <bold>Largeur : </bold> {{$model -> largeur}} <br>
-                                                    <bold>Hauteur :</bold> {{$model -> hauteur}}
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Appercu</th>
+                                        <th scope="col">Modele</th>
+                                        <th scope="col">Caractéristiques</th>
+                                        <th scope="col">Tariff</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
 
-                                                </td>
-                                                <td>{{$model -> prix}}</td>
-                                            </tr>
-                                            @endforeach
+                                </thead>
+                                <tbody>
+                                    @foreach ($modeles as $model)
+                                    <tr>
+                                        <th scope="row">
+                                            <img src="{{$model -> image}}" alt="Profile" class="rounded-circle" width="180" height="100">
+                                        </th>
+                                        <td>
+                                            <bold>{{$model -> nom}}</bold>
+                                        </td>
+                                        <td><i class="ri-door-fill"></i>{{$model -> portes}} | <i class="ri-luggage-deposit-fill"></i>{{$model -> valises}} | <i class="ri-user-3-fill"></i>{{$model -> places}}
+                                            | <i class="bx bx-sitemap"></i>{{$model -> trans}}
+                                            <br>
+                                            <bold>Longeur :</bold> {{$model -> longeur}} <br>
+                                            <bold>Largeur : </bold> {{$model -> largeur}} <br>
+                                            <bold>Hauteur :</bold> {{$model -> hauteur}}
 
-                                        </tbody>
-                                    </table>
+                                        </td>
+                                        <td>{{$model -> prix}}</td>
+                                        <td>
+                                            <div class="btn-group" role="group" aria-label="Actions">
+                                                <button type="button" class="btn btn-info"><a href="{{route('administrateur.detailmodel', [$model->id])}}"><i class="bi bi-eye"></i></a></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
 

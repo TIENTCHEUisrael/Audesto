@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./car/car.html">
+                    <a href="{{route('Administrateur.addcar')}}">
                         <i class="bi bi-car-front"></i><span>Add Car</span>
                     </a>
                 </li>

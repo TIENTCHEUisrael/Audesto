@@ -44,14 +44,26 @@ class AdministrateurController extends Controller
     {
         if (Auth::check()) {
             $model = DB::select('select * from modele where id='.$id);
-            return view('auth.layouts.admin.components.user.list', ['model'=>$model]);
+            $recom = DB::select('select * from recommandation');
+            $cat = DB::select('SELECT * FROM categorie');
+            $trans = DB::select('SELECT * FROM transmission');
+            return view('layouts.admin.components.car.modeldetail', ['model'=>$model, 'recom'=>$recom, 'cat'=>$cat, 'trans'=>$trans]);
         } else
             return view('auth.register');
     }
-    public function updatemodel()
+    public function updatemodel(Request $validated)
     {
         if (Auth::check()) {
-            return view('auth.layouts.admin.components.user.list');
+            DB::table('modele')
+            ->where('id', $validated->input('id'))
+            ->update(['nom' => $validated->input('nom'), 'description' => $validated->input('description'),
+                'titre' => $validated->input('titre'), 'recommandation' => $validated->input('recommandation'),
+                'transmission' => $validated->input('transmission'), 'longeur' => $validated->input('longeur'),
+                'largeur' => $validated->input('largeur'), 'hauteur' => $validated->input('hauteur'),
+                'titre' => $validated->input('titre'), 'recommandation' => $validated->input('portes'),
+                'places' => $validated->input('places'), 'prix' => $validated->input('prix')
+        ]);
+        return redirect('/Administrateur/listmodel')->with('success', "Account successfully registered.");
         } else
             return view('auth.register');
     }
@@ -63,19 +75,32 @@ class AdministrateurController extends Controller
             return view('auth.register');
     }
     public function addcar()
-    {//done
+    {
         if (Auth::check()) {
-            return view('auth.layouts.admin.components.user.list');
+            $model = DB::select('select * from modele');
+            return view('layouts.admin.components.car.car',['model'=>$model]);
         } else
             return view('auth.register');
     }
     public function listcar()
     {
         if (Auth::check()) {
-            $voitures = DB::select('select * from voiture');
-            return view('auth.layouts.admin.components.car.listC', ['voitures'=> $voitures]);
+            $voitures = DB::select('select v.*, m.nom "model" from voiture v join modele m on v.modele = m.id');
+            return view('layouts.admin.components.car.listC', ['voitures'=> $voitures]);
         } else
             return view('auth.register');
+    }
+    public function savecar(Request $validated)
+    {
+        //$validated = $request->validated();
+        $user = auth()->user();
+
+        $query = DB::table('voiture')->insert([
+            'matricule' => $validated->input('matricule'),
+            'chassis' => $validated->input('chassis'),
+            'modele' => $validated->input('modele'),
+        ]);
+        return redirect('/Administrateur/listcar')->with('success', "Account successfully registered.");
     }
     public function deletecar()
     {//done

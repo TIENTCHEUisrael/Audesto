@@ -76,12 +76,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/Administrateur/userdetail/{id}', 'AdministrateurController@userdetail')->name('administrateur.userdetail');
     Route::get('/Administrateur/dashboard', 'AdministrateurController@dashboard')->name('administrateur.dashboard');
     Route::get('/Administrateur/listmodel', 'AdministrateurController@listmodel')->name('administrateur.listmodel');
-    Route::get('/Administrateur/detailmodel', 'AdministrateurController@detailmodel')->name('administrateur.detailmodel');
+    Route::get('/Administrateur/detailmodel/{id}', 'AdministrateurController@detailmodel')->name('administrateur.detailmodel');
     Route::get('/Administrateur/listcar', 'AdministrateurController@listcar')->name('administrateur.listcar');
     Route::get('/Administrateur/cardetail/{id}', 'AdministrateurController@cardetail')->name('administrateur.cardetail');
     Route::get('Administrateur/reservation', 'AdministrateurController@reservation')->name('Administrateur.reservation');
     Route::get('Administrateur/profile', 'AdministrateurController@profile')->name('Administrateur.profile');
     Route::get('Administrateur/message', 'AdministrateurController@message')->name('Administrateur.message');
+    Route::get('Administrateur/addcar', 'AdministrateurController@addcar')->name('Administrateur.addcar');
 
     Route::post('Administrateur/profile', 'AdministrateurController@saveprofile')->name('Administrateur.saveprofile');
     Route::post('Administrateur/savereservation', 'AdministrateurController@savereservation')->name('Administrateur.savereservation');
@@ -94,7 +95,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::post('Administrateur/addmodel', 'AdministrateurController@addmodel')->name('Administrateur.addmodel');
     Route::post('Administrateur/sendmessage', 'AdministrateurController@sendmessage')->name('Administrateur.sendmessage');
     Route::post('Administrateur/savecontact', 'AdministrateurController@savecontact')->name('Administrateur.savecontact');
-    Route::post('Administrateur/addcar', 'AdministrateurController@addcar')->name('Administrateur.addcar');
+    Route::post('Administrateur/savecar', 'AdministrateurController@savecar')->name('Administrateur.savecar');
     Route::post('Administrateur/password', 'AdministrateurController@password')->name('Administrateur.password');
 
 
