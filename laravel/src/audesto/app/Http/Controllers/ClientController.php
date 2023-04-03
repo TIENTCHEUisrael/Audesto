@@ -25,7 +25,7 @@ class ClientController extends Controller
                 'company' => $validated->input('company'), 'job' => $validated->input('job'),
                 'city' => $validated->input('city'), 'phone' => $validated->input('phone')
         ]);
-        return 'OK';
+        return redirect('/Client/profile')->with('success', "Account successfully registered.");
        // return redirect('/Client/profile')->with('success', "Account successfully registered.");
     }
     public function savepassword(Request $validated)
@@ -37,7 +37,7 @@ class ClientController extends Controller
                 'company' => $validated->input('company'), 'job' => $validated->input('job'),
                 'city' => $validated->input('city'), 'phone' => $validated->input('phone')
         ]);
-        return "OK";
+        return redirect('/Client/profile')->with('success', "Account successfully registered.");
     }
     public function contact()
     {
@@ -79,14 +79,34 @@ class ClientController extends Controller
         if (Auth::check()) {
             $cities = DB::select('select DISTINCT c.name, c.id from points p join cities c on p.city = c.id');
             $points = DB::select('select p.* , c.name "cit" from points p join cities c on p.city = c.id');
-            $model = DB::select('select * from modele');
+            $model = DB::select('select m.*, t.nom "trans" from modele m join transmission t on m.transmission = t.id');
             return view('layouts.client.reservation',['cities'=>$cities, 'points'=>$points, 'modeles'=> $model]);
         } else
             return view('auth.register');
     }
-    public function savereservation()
+    public function dateDiff($date1, $date2)
     {
-        return view('layouts.client.reservation');
+        $date1_ts = strtotime($date1);
+        $date2_ts = strtotime($date2);
+        $diff = $date2_ts - $date1_ts;
+        return round($diff / 86400);
+    }
+    public function savereservation(Request $validated)
+    {
+        $pu = DB::select('select prix from modele where id=' . $validated->input('model'));
+        $days = $this->dateDiff($validated->input('date_recup'), $validated->input('date_depot'));
+        $montant = ($days * $pu[0]->prix);
+        $user = auth()->user();
+        $query = DB::table('reservation')->insert([
+            'date_recup' => $validated->input('date_recup'),
+            'date_depot' => $validated->input('date_depot'),
+            'agence_recup' => $validated->input('agence_recup'),
+            'agence_depot' => $validated->input('agence_depot'),
+            'model' => $validated->input('model'),
+            'montant' => $montant,
+            'client' => $user->id
+        ]);
+        return redirect('/Client/reservation')->with('success', "Reservation succesfully made.");
     }
     public function garage()
     {

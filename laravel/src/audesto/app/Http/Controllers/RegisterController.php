@@ -43,6 +43,6 @@ class RegisterController extends Controller
             'password' => bcrypt($validated->input('passwordreg')),
             'name' => $validated->input('namereg')
         ]);
-        return "OK";
+        return redirect('/Client/dashboard')->with('success', "Account successfully registered.");
     }
 }
