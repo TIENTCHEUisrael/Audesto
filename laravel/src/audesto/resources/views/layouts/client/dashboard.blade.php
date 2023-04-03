@@ -129,8 +129,8 @@
                                                     <bold>{{$reservation -> mod}}</bold>
                                                 </td>
                                                 <td>
-                                                        <bold>{{$reservation -> dur}}</bold>
-                                                    </td>
+                                                    <bold>{{$reservation -> dur}}</bold>
+                                                </td>
                                                 <td>XAF {{$reservation -> montant}}</td>
                                                 <td>{{$reservation -> agrrue}},{{$reservation -> agrquar}}<br>|<br>{{$reservation -> agdrue}},{{$reservation -> agdquar}} </td>
                                                 <td><span class="badge bg-success">{{$reservation -> statut}}</span></td>
@@ -166,34 +166,34 @@
                                     <table class="table table-borderless">
                                         <thead>
                                             <tr>
-                                            <th scope="col">Appercu</th>
-                                <th scope="col">Modele</th>
-                                <th scope="col">Caractéristiques</th>
-                                <th scope="col">Tariff</th>
+                                                <th scope="col">Appercu</th>
+                                                <th scope="col">Modele</th>
+                                                <th scope="col">Caractéristiques</th>
+                                                <th scope="col">Tariff</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                            @foreach ($modeles as $model)
-                            <tr>
-                                <th scope="row">
-                                    <img src="{{$model -> image}}" alt="Profile" class="rounded-circle" width="60" height="36">
-                                </th>
-                                <td>
-                                    <bold>{{$model -> nom}}</bold>
-                                </td>
-                                <td><i class="ri-door-fill"></i>{{$model -> portes}} | <i class="ri-luggage-deposit-fill"></i>{{$model -> valises}} | <i class="ri-user-3-fill"></i>{{$model -> places}}
-                                    | <i class="bx bx-sitemap"></i>{{$model -> trans}}
-                                    <br>
-                                    <bold>Longeur :</bold> {{$model -> longeur}} <br>
-                                    <bold>Largeur : </bold> {{$model -> largeur}} <br>
-                                    <bold>Hauteur :</bold> {{$model -> hauteur}}
+                                            @foreach ($modeles as $model)
+                                            <tr>
+                                                <th scope="row">
+                                                    <img src="{{$model -> image}}" alt="Profile" class="rounded-circle" width="60" height="36">
+                                                </th>
+                                                <td>
+                                                    <bold>{{$model -> nom}}</bold>
+                                                </td>
+                                                <td><i class="ri-door-fill"></i>{{$model -> portes}} | <i class="ri-luggage-deposit-fill"></i>{{$model -> valises}} | <i class="ri-user-3-fill"></i>{{$model -> places}}
+                                                    | <i class="bx bx-sitemap"></i>{{$model -> trans}}
+                                                    <br>
+                                                    <bold>Longeur :</bold> {{$model -> longeur}} <br>
+                                                    <bold>Largeur : </bold> {{$model -> largeur}} <br>
+                                                    <bold>Hauteur :</bold> {{$model -> hauteur}}
 
-                                </td>
-                                <td>{{$model -> prix}}</td>
-                            </tr>
-                            @endforeach
+                                                </td>
+                                                <td>{{$model -> prix}}</td>
+                                            </tr>
+                                            @endforeach
 
-                        </tbody>
+                                        </tbody>
                                     </table>
 
                                 </div>
@@ -228,7 +228,7 @@
                                     <h4><a href="#">{{$echa->question}}</a></h4>
                                     <p>{{$echa->reponse}}</p>
                                 </div>
-                            @endforeach
+                                @endforeach
                             </div><!-- End sidebar recent posts-->
 
                         </div>

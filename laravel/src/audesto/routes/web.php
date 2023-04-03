@@ -73,11 +73,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      */
     Route::get('/Administrateur/login', 'LoginController@administrateur')->name('login.administrateur');
     Route::get('/Administrateur/userlist', 'AdministrateurController@userlist')->name('administrateur.userlist');
+    Route::get('/Administrateur/userdetail/{id}', 'AdministrateurController@userdetail')->name('administrateur.userdetail');
     Route::get('/Administrateur/dashboard', 'AdministrateurController@dashboard')->name('administrateur.dashboard');
     Route::get('/Administrateur/listmodel', 'AdministrateurController@listmodel')->name('administrateur.listmodel');
     Route::get('/Administrateur/detailmodel', 'AdministrateurController@detailmodel')->name('administrateur.detailmodel');
     Route::get('/Administrateur/listcar', 'AdministrateurController@listcar')->name('administrateur.listcar');
-    Route::get('/Administrateur/cardetail', 'AdministrateurController@cardetail')->name('administrateur.cardetail');
+    Route::get('/Administrateur/cardetail/{id}', 'AdministrateurController@cardetail')->name('administrateur.cardetail');
     Route::get('Administrateur/reservation', 'AdministrateurController@reservation')->name('Administrateur.reservation');
     Route::get('Administrateur/profile', 'AdministrateurController@profile')->name('Administrateur.profile');
     Route::get('Administrateur/message', 'AdministrateurController@message')->name('Administrateur.message');

@@ -11,28 +11,40 @@ class AdministrateurController extends Controller
     public function userlist()
     {
         if (Auth::check()) {
-            return view('layouts.admin.components.user.list');
+            $users = DB::select('select * from users');
+            return view('layouts.admin.components.user.list', ['users'=>$users]);
+        } else
+            return view('auth.register');
+    }
+    public function userdetail($id)
+    {
+        if (Auth::check()) {
+            $users = DB::select('select * from users where id='.$id);
+            return view('layouts.admin.components.user.userdetail', ['users'=>$users]);
         } else
             return view('auth.register');
     }
     public function addmodel()
     {
         if (Auth::check()) {
-            return view('auth.layouts.admin.components.user.list');
+            
+            return view('layouts.admin.components.user.list');
         } else
             return view('auth.register');
     }
     public function listmodel()
     {
         if (Auth::check()) {
-            return view('auth.layouts.admin.components.user.list');
+            $model = DB::select('select m.*, t.nom "trans" from modele m join transmission t on m.transmission = t.id');
+            return view('layouts.admin.components.car.listM', ['modeles'=> $model]);
         } else
             return view('auth.register');
     }
-    public function detailmodel()
+    public function detailmodel($id)
     {
         if (Auth::check()) {
-            return view('auth.layouts.admin.components.user.list');
+            $model = DB::select('select * from modele where id='.$id);
+            return view('auth.layouts.admin.components.user.list', ['model'=>$model]);
         } else
             return view('auth.register');
     }
@@ -44,14 +56,14 @@ class AdministrateurController extends Controller
             return view('auth.register');
     }
     public function deletemodel()
-    {
+    {//done
         if (Auth::check()) {
             return view('auth.layouts.admin.components.user.list');
         } else
             return view('auth.register');
     }
     public function addcar()
-    {
+    {//done
         if (Auth::check()) {
             return view('auth.layouts.admin.components.user.list');
         } else
@@ -60,26 +72,28 @@ class AdministrateurController extends Controller
     public function listcar()
     {
         if (Auth::check()) {
-            return view('auth.layouts.admin.components.user.list');
+            $voitures = DB::select('select * from voiture');
+            return view('auth.layouts.admin.components.car.listC', ['voitures'=> $voitures]);
         } else
             return view('auth.register');
     }
     public function deletecar()
-    {
+    {//done
         if (Auth::check()) {
             return view('auth.layouts.admin.components.user.list');
         } else
             return view('auth.register');
     }
-    public function cardetail()
+    public function cardetail($id)
     {
         if (Auth::check()) {
+            $car = DB::select('select * from voiture where id='.$id);
             return view('auth.layouts.admin.components.user.list');
         } else
             return view('auth.register');
     }
     public function updatecar()
-    {
+    {//done
         if (Auth::check()) {
             return view('auth.layouts.admin.components.user.list');
         } else
@@ -88,19 +102,20 @@ class AdministrateurController extends Controller
     public function reservation()
     {
         if (Auth::check()) {
-            return view('auth.layouts.admin.components.user.list');
+            $res = DB::select('select * from reservation');
+            return view('auth.layouts.admin.components.user.list', ['res'=>$res]);
         } else
             return view('auth.register');
     }
     public function updatereservation()
-    {
+    {//done
         if (Auth::check()) {
             return view('auth.layouts.admin.components.user.list');
         } else
             return view('auth.register');
     }
     public function detailreservation()
-    {
+    {//done
         if (Auth::check()) {
             return view('auth.layouts.admin.components.user.list');
         } else
@@ -110,12 +125,14 @@ class AdministrateurController extends Controller
     public function profile()
     {
         if (Auth::check()) {
+            $user = auth()->user();
+            $user = DB::select('select * from user where id='.$user->id);
             return view('auth.layouts.admin.components.user.list');
         } else
             return view('auth.register');
     }
     public function password()
-    {
+    {//done
         if (Auth::check()) {
             return view('auth.layouts.admin.components.user.list');
         } else
@@ -124,12 +141,14 @@ class AdministrateurController extends Controller
     public function message()
     {
         if (Auth::check()) {
+            $user = auth()->user();
+            $user = DB::select('select * from reponse where administrateur='.$user->id);
             return view('auth.layouts.admin.components.user.list');
         } else
             return view('auth.register');
     }
     public function sendmessage()
-    {
+    {//done
         if (Auth::check()) {
             return view('auth.layouts.admin.components.user.list');
         } else
