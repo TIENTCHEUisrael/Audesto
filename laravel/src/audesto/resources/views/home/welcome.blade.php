@@ -235,7 +235,7 @@
                   <p class="u-align-left u-text u-text-7"> <span class="u-file-icon u-icon"><img src=" {{$model -> image}}" alt></span>  Valise : {{ $model->valises }}
                   </p>
                   <p class="u-align-left u-text u-text-8"> {{$model -> description}}</p>
-                  <a href="#" class="u-active-palette-1-dark-2 u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-2 u-palette-1-base u-radius-50 u-btn-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Reserve maintenant</a>
+                  <a href="{{route('login.perform')}}" class="u-active-palette-1-dark-2 u-align-left u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-dark-2 u-palette-1-base u-radius-50 u-btn-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Reserve maintenant</a>
                 </div>
               </div>
             </div>
