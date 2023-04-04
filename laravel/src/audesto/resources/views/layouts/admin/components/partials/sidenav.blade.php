@@ -73,6 +73,23 @@
             </ul>
         </li><!-- End Tables Nav -->
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-book-half"></i><span>Réservations</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+                <a href="./reservations/reservations.html">
+                    <i class="bi bi-circle"></i><span>Listes</span>
+                </a>
+            </li>
+            <li>
+                <a href="../agenceAdd.html">
+                    <i class="bi bi-circle"></i><span>Ajouter Agences</span>
+                </a>
+            </li>
+        </ul>
+    </li><!-- End Charts Nav -->
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-book-half"></i><span>Réservations</span><i class="bi bi-chevron-down ms-auto"></i>
