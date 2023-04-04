@@ -79,7 +79,7 @@
             </a>
             <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="./reservations/reservations.html">
+                    <a href="{{route('Administrateur.reservation')}}">
                         <i class="bi bi-circle"></i><span>Listes</span>
                     </a>
                 </li>
@@ -92,14 +92,14 @@
         <li class="nav-heading">Pages</li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="./profile.html">
+            <a class="nav-link collapsed" href="{{ route('Administrateur.profile') }}">
                 <i class="bi bi-person"></i>
                 <span>Profile</span>
             </a>
         </li><!-- End Profile Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="./message/message.html">
+            <a class="nav-link collapsed" href="{{route('administrateur.message')}}">
                 <i class="bi bi-question-circle"></i>
                 <span>Messages</span>
             </a>

@@ -59,6 +59,14 @@ class ClientController extends Controller
         ]);
         return "OK";
     }
+        public function savresponse(Request $validated)
+    {
+            $query = DB::table('reponse')->insert([
+                'message' => $validated->input('response'),
+                'question' => $validated->input('id')
+            ]);
+            return 'OK';
+    }
     public function faq()
     {
         if (Auth::check()) {

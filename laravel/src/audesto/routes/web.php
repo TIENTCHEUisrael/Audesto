@@ -65,6 +65,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
     Route::get('Client/contact', 'ClientController@contact')->name('client.contact');
     Route::post('Client/contact', 'ClientController@savecontact')->name('client.savecontact');
+    Route::post('Client/savresponse', 'AdministrateurController@savresponse')->name('client.savresponse');
 
 
 
@@ -80,20 +81,23 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/Administrateur/listcar', 'AdministrateurController@listcar')->name('administrateur.listcar');
     Route::get('/Administrateur/cardetail/{id}', 'AdministrateurController@cardetail')->name('administrateur.cardetail');
     Route::get('Administrateur/reservation', 'AdministrateurController@reservation')->name('Administrateur.reservation');
+    Route::get('Administrateur/reservationdetail/{id}', 'AdministrateurController@reservationdetail')->name('Administrateur.reservationdetail');
     Route::get('Administrateur/profile', 'AdministrateurController@profile')->name('Administrateur.profile');
-    Route::get('Administrateur/message', 'AdministrateurController@message')->name('Administrateur.message');
+    Route::get('Administrateur/message', 'AdministrateurController@message')->name('administrateur.message');
+    Route::get('Administrateur/messagedetail/{id}', 'AdministrateurController@messagedetail')->name('administrateur.messagedetail');
     Route::get('Administrateur/addcar', 'AdministrateurController@addcar')->name('Administrateur.addcar');
 
-    Route::post('Administrateur/profile', 'AdministrateurController@saveprofile')->name('Administrateur.saveprofile');
+    Route::post('Administrateur/savmessage', 'AdministrateurController@savmessage')->name('administrateur.savmessage');
+    Route::post('Administrateur/profile', 'AdministrateurController@saveprofile')->name('administrateur.saveprofile');
     Route::post('Administrateur/savereservation', 'AdministrateurController@savereservation')->name('Administrateur.savereservation');
-    Route::post('Administrateur/updatereservation', 'AdministrateurController@updatereservation')->name('Administrateur.updatereservation');
+    Route::post('Administrateur/updatereservation/{id}', 'AdministrateurController@updatereservation')->name('Administrateur.updatereservation');
     Route::post('Administrateur/detailreservation', 'AdministrateurController@detailreservation')->name('Administrateur.detailreservation');
     Route::post('Administrateur/updatemodel', 'AdministrateurController@updatemodel')->name('Administrateur.updatemodel');
     Route::post('Administrateur/deletecar', 'AdministrateurController@deletecar')->name('Administrateur.deletecar');
     Route::post('Administrateur/updatecar', 'AdministrateurController@updatecar')->name('Administrateur.updatecar');
     Route::post('Administrateur/deletemodel', 'AdministrateurController@deletemodel')->name('Administrateur.deletemodel');
     Route::post('Administrateur/addmodel', 'AdministrateurController@addmodel')->name('Administrateur.addmodel');
-    Route::post('Administrateur/sendmessage', 'AdministrateurController@sendmessage')->name('Administrateur.sendmessage');
+    Route::post('Administrateur/smessage', 'AdministrateurController@smessage')->name('administrateur.smessage');
     Route::post('Administrateur/savecontact', 'AdministrateurController@savecontact')->name('Administrateur.savecontact');
     Route::post('Administrateur/savecar', 'AdministrateurController@savecar')->name('Administrateur.savecar');
     Route::post('Administrateur/password', 'AdministrateurController@password')->name('Administrateur.password');

@@ -127,22 +127,30 @@ class AdministrateurController extends Controller
     public function reservation()
     {
         if (Auth::check()) {
-            $res = DB::select('select * from reservation');
-            return view('auth.layouts.admin.components.user.list', ['res'=>$res]);
+            $res = DB::select('select  r.*, rs.nom "statut",u.name "name", m.nom "mod",agd.quartier "agdquar",agd.rue "agdrue", agr.quartier "agrquar", agr.rue "agrrue" ,r.montant/m.prix "dur" from reservation r join resstatut rs on r.statut = rs.id 
+            join modele m on m.id = r.model join points agd on r.agence_depot = agd.id join users u on u.id= r.client join points agr on agr.id = r.agence_recup
+            where year(r.createdAt) = year(curdate())');
+            return view('layouts.admin.components.reservations.reservations', ['res'=>$res]);
         } else
             return view('auth.register');
     }
-    public function updatereservation()
+    public function updatereservation($id)
     {//done
         if (Auth::check()) {
+            
             return view('auth.layouts.admin.components.user.list');
         } else
             return view('auth.register');
     }
-    public function detailreservation()
+    public function reservationdetail($id)
     {//done
         if (Auth::check()) {
-            return view('auth.layouts.admin.components.user.list');
+            $res = DB::select('select  r.*, rs.nom "statut",u.name "name", m.nom "mod",agd.quartier "agdquar",agd.rue "agdrue", agr.quartier "agrquar", agr.rue "agrrue" ,r.montant/m.prix "dur" from reservation r join resstatut rs on r.statut = rs.id 
+            join modele m on m.id = r.model join points agd on r.agence_depot = agd.id join users u on u.id= r.client join points agr on agr.id = r.agence_recup
+            where year(r.createdAt) = year(curdate()) where r.id='.$id);
+            $voi = DB::select('select * from voiture');
+            //$res = DB::select('select r.*,  from reservation r join user u on u.id= r.client where r.id='.$id);
+            return view('layouts.admin.components.reservation.reservationdetail', ['res'=>$res, 'voi'=>$voi]);
         } else
             return view('auth.register');
     }
@@ -151,8 +159,8 @@ class AdministrateurController extends Controller
     {
         if (Auth::check()) {
             $user = auth()->user();
-            $user = DB::select('select * from user where id='.$user->id);
-            return view('auth.layouts.admin.components.user.list');
+            $user = DB::select('select * from users where id='.$user->id);
+            return view('layouts.admin.components.profile');
         } else
             return view('auth.register');
     }
@@ -167,18 +175,40 @@ class AdministrateurController extends Controller
     {
         if (Auth::check()) {
             $user = auth()->user();
-            $user = DB::select('select * from reponse where administrateur='.$user->id);
-            return view('auth.layouts.admin.components.user.list');
+            $requetes = DB::select('select *, cl.name "client" from contact c join users cl on c.client =cl.id join reponse rep on rep.question != c.id');
+            return view('layouts.admin.components.message.message',['req'=>$requetes]);
         } else
             return view('auth.register');
     }
-    public function sendmessage()
-    {//done
+    public function messagedetail($id)
+    {
         if (Auth::check()) {
-            return view('auth.layouts.admin.components.user.list');
+            $user = auth()->user();
+            $requetes = DB::select('select *, cl.name "client" from contact c join users cl on c.client =cl.id where c.id='.$id);
+            return view('layouts.admin.components.message.messagedetail',['req'=>$requetes]);
         } else
             return view('auth.register');
     }
+    public function smessage(Request $validated)
+    {
+            $user = auth()->user();
+            $query = DB::table('reponse')->insert([
+                'message' => $validated->input('response'),
+                'question' => $validated->input('id'),
+                'administrateur' => $user->id
+            ]);
+            return 'OK';
+    }
+
+    public function savresponse(Request $validated)
+    {
+            $query = DB::table('reponse')->insert([
+                'message' => $validated->input('response'),
+                'question' => $validated->input('id')
+            ]);
+            return 'OK';
+    }
+
 
     public function savecontact(Request $validated)
     {
@@ -191,7 +221,7 @@ class AdministrateurController extends Controller
             'message' => $validated->input('message'),
             'client' => $user->id
         ]);
-        return "OK";
+        return redirect('/Administrateur/message')->with('success', "Account successfully registered.");
     }
     public function faq()
     {
@@ -206,15 +236,27 @@ class AdministrateurController extends Controller
         $user = auth()->user();
         
         if (Auth::check()) {
-            $complet = DB::select('select COUNT(id) "num", COUNT(id) from reservation where client='.$user->id. ' and statut =3');
-            $incomplet = DB::select('select COUNT(id) "num" from reservation where client='.$user->id. ' and statut =1');
+            $complet = DB::select('select COUNT(id) "num" from reservation where statut =3');
+            $incomplet = DB::select('select COUNT(id) "num" from reservation where  statut =1');
             $reservations = DB::select('select  r.*, rs.nom "statut", m.nom "mod",agd.quartier "agdquar",agd.rue "agdrue", agr.quartier "agrquar", agr.rue "agrrue" ,r.montant/m.prix "dur" from reservation r join resstatut rs on r.statut = rs.id 
             join modele m on m.id = r.model join points agd on r.agence_depot = agd.id join points agr on agr.id = r.agence_recup
-            where year(r.createdAt) = year(curdate()) and r.client ='.$user->id);
+            where year(r.createdAt) = year(curdate()) ');
             $model = DB::select('select m.*, t.nom "trans" from modele m join transmission t on m.transmission = t.id limit 10');
-            $contact = DB::select('select c.message "question", rep.message "reponse" from contact c join reponse rep on rep.question = c.id where client='.$user->id);
+            $contact = DB::select('select c.message "question", rep.message "reponse" from contact c join reponse rep on rep.question = c.id ');
             return view('layouts.admin.components.dashboard',['complet'=>$complet, 'incomplet'=>$incomplet, 'reservations'=> $reservations, 'modeles'=>$model, 'contact'=>$contact]);
         } else
             return view('auth.register');
+    }
+    public function saveprofile(Request $validated)
+    {
+        $user = auth()->user();
+        DB::table('users')
+            ->where('id', $user->id)
+            ->update(['name' => $validated->input('name'), 'about' => $validated->input('about'),
+                'company' => $validated->input('company'), 'job' => $validated->input('job'),
+                'city' => $validated->input('city'), 'phone' => $validated->input('phone')
+        ]);
+        return redirect('/Administrateur/profile')->with('success', "Account successfully registered.");
+       // return redirect('/Client/profile')->with('success', "Account successfully registered.");
     }
 }
