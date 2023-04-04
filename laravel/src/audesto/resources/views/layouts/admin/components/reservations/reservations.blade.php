@@ -58,7 +58,7 @@
                                         <td><span class="badge bg-success">{{$reservation -> statut}}</span></td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Actions">
-                                                <button type="button" class="btn btn-info"><a href="{{route('Administrateur.detailreservation',[$reservation->code])}}"><i class="bi bi-tag"></i></button>
+                                                <button type="button" class="btn btn-info"><a href="{{route('Administrateur.reservationdetail',[$reservation->id])}}"><i class="bi bi-tag"></i></button>
                                             </div>
                                         </td>
                                     </tr>

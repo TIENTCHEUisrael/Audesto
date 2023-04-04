@@ -134,11 +134,17 @@ class AdministrateurController extends Controller
         } else
             return view('auth.register');
     }
-    public function updatereservation($id)
-    {//done
+    public function updatereservation(Request $validated)
+    {
         if (Auth::check()) {
-            
-            return view('auth.layouts.admin.components.user.list');
+            $st = 3;
+            $id = $validated->input('idd');
+            $voiture = $validated->input('voiture');
+            $user = auth()->user();
+            DB::table('reservation')
+                ->where('id', $id)
+                ->update(['statut' => $st,'voiture'=>$voiture]);
+            return redirect('/Administrateur/reservation')->with('success', "Account successfully registered.");
         } else
             return view('auth.register');
     }
@@ -147,10 +153,10 @@ class AdministrateurController extends Controller
         if (Auth::check()) {
             $res = DB::select('select  r.*, rs.nom "statut",u.name "name", m.nom "mod",agd.quartier "agdquar",agd.rue "agdrue", agr.quartier "agrquar", agr.rue "agrrue" ,r.montant/m.prix "dur" from reservation r join resstatut rs on r.statut = rs.id 
             join modele m on m.id = r.model join points agd on r.agence_depot = agd.id join users u on u.id= r.client join points agr on agr.id = r.agence_recup
-            where year(r.createdAt) = year(curdate()) where r.id='.$id);
+            where year(r.createdAt) = year(curdate()) and r.id='.$id);
             $voi = DB::select('select * from voiture');
             //$res = DB::select('select r.*,  from reservation r join user u on u.id= r.client where r.id='.$id);
-            return view('layouts.admin.components.reservation.reservationdetail', ['res'=>$res, 'voi'=>$voi]);
+            return view('layouts.admin.components.reservations.reservationdetail', ['res'=>$res, 'voi'=>$voi]);
         } else
             return view('auth.register');
     }
@@ -175,7 +181,7 @@ class AdministrateurController extends Controller
     {
         if (Auth::check()) {
             $user = auth()->user();
-            $requetes = DB::select('select *, cl.name "client" from contact c join users cl on c.client =cl.id join reponse rep on rep.question != c.id');
+            $requetes = DB::select('select c.*, cl.name "client" from contact c join users cl on c.client =cl.id join admessage rep on rep.question != c.id');
             return view('layouts.admin.components.message.message',['req'=>$requetes]);
         } else
             return view('auth.register');
@@ -189,10 +195,19 @@ class AdministrateurController extends Controller
         } else
             return view('auth.register');
     }
+    public function agence()
+    {
+        if (Auth::check()) {
+            $user = auth()->user();
+            $cty = DB::select('select * from cities');
+            return view('layouts.admin.components.agenceadd',['cities'=>$cty]);
+        } else
+            return view('auth.register');
+    }
     public function smessage(Request $validated)
     {
             $user = auth()->user();
-            $query = DB::table('reponse')->insert([
+            $query = DB::table('admessage')->insert([
                 'message' => $validated->input('response'),
                 'question' => $validated->input('id'),
                 'administrateur' => $user->id
@@ -202,11 +217,21 @@ class AdministrateurController extends Controller
 
     public function savresponse(Request $validated)
     {
-            $query = DB::table('reponse')->insert([
+            $query = DB::table('admessage')->insert([
                 'message' => $validated->input('response'),
                 'question' => $validated->input('id')
             ]);
             return 'OK';
+    }
+
+    public function saveagence(Request $validated)
+    {
+            $query = DB::table('points')->insert([
+                'rue' => $validated->input('rue'),
+                'city' => $validated->input('city'),
+                'quartier' => $validated->input('quartier')
+            ]);
+            return redirect('/Administrateur/dashboard')->with('success', "Account successfully registered.");
     }
 
 

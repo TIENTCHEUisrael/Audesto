@@ -65,7 +65,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
     Route::get('Client/contact', 'ClientController@contact')->name('client.contact');
     Route::post('Client/contact', 'ClientController@savecontact')->name('client.savecontact');
-    Route::post('Client/savresponse', 'AdministrateurController@savresponse')->name('client.savresponse');
+    Route::post('Client/savresponse', 'ClientController@savresponse')->name('client.savresponse');
 
 
 
@@ -86,11 +86,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('Administrateur/message', 'AdministrateurController@message')->name('administrateur.message');
     Route::get('Administrateur/messagedetail/{id}', 'AdministrateurController@messagedetail')->name('administrateur.messagedetail');
     Route::get('Administrateur/addcar', 'AdministrateurController@addcar')->name('Administrateur.addcar');
+    Route::get('Administrateur/agence', 'AdministrateurController@agence')->name('Administrateur.agence');
 
     Route::post('Administrateur/savmessage', 'AdministrateurController@savmessage')->name('administrateur.savmessage');
     Route::post('Administrateur/profile', 'AdministrateurController@saveprofile')->name('administrateur.saveprofile');
     Route::post('Administrateur/savereservation', 'AdministrateurController@savereservation')->name('Administrateur.savereservation');
-    Route::post('Administrateur/updatereservation/{id}', 'AdministrateurController@updatereservation')->name('Administrateur.updatereservation');
+    Route::post('Administrateur/updatereservation', 'AdministrateurController@updatereservation')->name('Administrateur.updatereservation');
     Route::post('Administrateur/detailreservation', 'AdministrateurController@detailreservation')->name('Administrateur.detailreservation');
     Route::post('Administrateur/updatemodel', 'AdministrateurController@updatemodel')->name('Administrateur.updatemodel');
     Route::post('Administrateur/deletecar', 'AdministrateurController@deletecar')->name('Administrateur.deletecar');
@@ -101,6 +102,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::post('Administrateur/savecontact', 'AdministrateurController@savecontact')->name('Administrateur.savecontact');
     Route::post('Administrateur/savecar', 'AdministrateurController@savecar')->name('Administrateur.savecar');
     Route::post('Administrateur/password', 'AdministrateurController@password')->name('Administrateur.password');
+    Route::post('Administrateur/saveagence', 'AdministrateurController@saveagence')->name('Administrateur.saveagence');
 
 
 
