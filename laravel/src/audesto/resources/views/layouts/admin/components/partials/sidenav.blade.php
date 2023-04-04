@@ -19,11 +19,6 @@
                         <i class="bi bi-person"></i><span>List User</span>
                     </a>
                 </li>
-                <li>
-                    <a href="./user/#">
-                        <i class="bi bi-circle"></i><span>Accordion</span>
-                    </a>
-                </li>
             </ul>
         </li><!-- End Components Nav -->
 

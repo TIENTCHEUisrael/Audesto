@@ -181,7 +181,7 @@ class AdministrateurController extends Controller
     {
         if (Auth::check()) {
             $user = auth()->user();
-            $requetes = DB::select('select c.*, cl.name "client" from contact c join users cl on c.client =cl.id join admessage rep on rep.question != c.id');
+            $requetes = DB::select('select distinct c.*, cl.name "client" from contact c join users cl on c.client =cl.id join admessage rep on rep.question != c.id where c.id not in (select question from reponse) order by createdAt desc  ');
             return view('layouts.admin.components.message.message',['req'=>$requetes]);
         } else
             return view('auth.register');
@@ -190,7 +190,7 @@ class AdministrateurController extends Controller
     {
         if (Auth::check()) {
             $user = auth()->user();
-            $requetes = DB::select('select *, cl.name "client" from contact c join users cl on c.client =cl.id where c.id='.$id);
+            $requetes = DB::select('select c.*, cl.name "client" from contact c join users cl on c.client =cl.id where c.id='.$id);
             return view('layouts.admin.components.message.messagedetail',['req'=>$requetes]);
         } else
             return view('auth.register');

@@ -31,7 +31,7 @@
                             <div class="row gy-4">
                                 <div class="col-md-6">
                                     <input type="text" name="name" value="{{ $req[0]->client}}" class="form-control" placeholder="Client Name" readonly>
-                                    <input type="text" name="id" value="{{ $req[0]->id}}" hidden>
+                                    <input type="text" name="id" value="{{ $req[0]->id}}"  hidden>
                                 </div>
 
                                 <div class="col-md-6 ">
